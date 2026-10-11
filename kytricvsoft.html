@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090d1b">
+  <meta name="description" content="KYTRICVSOFT — games dan tools untuk browser.">
+  <title>KYTRICVSOFT</title>
+  <style>
+:root{--bg:#090d1b;--panel:#11182b;--panel2:#151e34;--line:rgba(157,180,255,.14);--text:#f3f6ff;--muted:#9aa7c5;--cyan:#69f0dc;--purple:#9b8cff;--pink:#ff78c8;--radius:22px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% 0%,#172348 0,transparent 35%),var(--bg);overflow-x:hidden}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}.ambient{position:fixed;border-radius:50%;filter:blur(90px);opacity:.14;pointer-events:none;z-index:0}.ambient-one{width:280px;height:280px;background:#735aff;top:10%;left:-180px}.ambient-two{width:240px;height:240px;background:#00e0ca;right:-180px;bottom:8%}.screen{position:relative;z-index:1;min-height:100vh}.hidden{display:none!important}.muted{color:var(--muted);line-height:1.55}.eyebrow{font-size:10px;font-weight:800;letter-spacing:2.3px;color:var(--cyan);margin:0 0 12px}.login-screen{display:grid;place-items:center;padding:28px 18px;overflow:hidden}.login-card{position:relative;z-index:2;width:min(100%,410px);padding:38px 30px 28px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(22,31,55,.96),rgba(12,17,32,.96));box-shadow:0 28px 90px #0007;text-align:center}.brand-mark{margin:0 auto 25px;width:62px;height:62px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(135deg,var(--cyan),#7b8bff);color:#0a1121;font-weight:1000;font-size:27px;box-shadow:0 0 35px #69f0dc35}.brand-mark span{font-size:12px;vertical-align:top}.login-card h1{font-size:clamp(25px,7vw,32px);letter-spacing:-1.4px;margin:0}.login-card h1 span{color:var(--cyan)}.intro{font-size:14px;margin:12px 0 30px}.login-card form{text-align:left}.login-card label{display:block;color:#c5cde2;font-size:12px;font-weight:700;margin-bottom:8px}.login-card input{width:100%;border:1px solid #303b59;background:#0a1020;color:white;border-radius:12px;padding:14px 15px;outline:none}.login-card input:focus{border-color:var(--cyan)}.password-label{margin-top:15px}.tiny-note b{color:var(--cyan);letter-spacing:.5px}.tools-section{padding-top:8px}.tools-grid{display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;max-width:100%;padding:2px 2px 14px;scroll-snap-type:x mandatory;scrollbar-width:thin}.tools-grid .game-card{flex:0 0 210px;scroll-snap-align:start}.tool-cover-button{cursor:pointer;border:0;width:100%;color:white}.cover-downloader{background:radial-gradient(circle at 50% 40%,#315e86,#17243d 75%)}.cover-amfinder{background:radial-gradient(circle at 50% 40%,#713e7e,#251c40 75%)}.tool-workspace{width:min(650px,100% - 28px);margin:0 auto;padding:28px 0}.tool-panel{padding:20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#141d33,#0e1425)}.tool-panel label{display:block;font-size:12px;font-weight:800;margin:14px 0 7px}.tool-panel input,.tool-panel textarea,.tool-panel select{width:100%;border:1px solid #303b59;background:#0a1020;color:white;border-radius:12px;padding:12px;min-width:0}.tool-panel textarea{min-height:105px;resize:vertical}.tool-platforms{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tool-platforms button{border:1px solid var(--line);background:#182239;color:#e8efff;padding:9px 12px;border-radius:10px}.tool-platforms button.active{border-color:var(--cyan);color:var(--cyan)}.tool-result{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:12px;overflow-wrap:anywhere}.tool-result a{color:var(--cyan);display:block;margin:8px 0}.tools-grid::-webkit-scrollbar{height:5px}.tools-grid::-webkit-scrollbar-thumb{background:#34415f;border-radius:9px}.cover-quran{background:radial-gradient(circle at 50% 40%,#3b7867,#15352f 75%)}.cover-premium{background:radial-gradient(circle at 50% 40%,#69512b,#2c2036 75%)}.tool-symbol{font-size:78px;color:#d4ffe8;text-shadow:0 0 28px #69f0dc55}.cover-premium .tool-symbol{color:#ffe1a0;text-shadow:0 0 28px #ffd36b55}.primary-btn{border:0;border-radius:12px;padding:13px 18px;color:#07141d;font-weight:850;background:linear-gradient(100deg,var(--cyan),#a2ffe8);box-shadow:0 8px 24px #39e6d01c;transition:transform .18s,filter .18s}.primary-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}.primary-btn span{margin-left:12px;font-size:18px}.full-btn{width:100%;margin-top:13px}.tiny-note{font-size:10px;color:#7582a1;margin:22px 0 0}.login-decoration{position:absolute;inset:0;pointer-events:none}.deco-orb{position:absolute;border-radius:50%;border:1px solid #7185cb33}.orb-a{width:300px;height:300px;top:-140px;right:-150px}.orb-b{width:220px;height:220px;bottom:-110px;left:-100px}.orb-c{width:80px;height:80px;bottom:20%;right:12%;background:#6ef5dc0b}.topbar{height:72px;padding:0 clamp(18px,5vw,70px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0b;background:#090d1bd9;backdrop-filter:blur(16px);position:sticky;top:0;z-index:10}.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--text);font-size:13px;font-weight:850;letter-spacing:.3px}.brand b{color:var(--cyan)}.brand-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),#9b8cff);color:#0b1322;font-weight:1000}.top-actions{display:flex;gap:10px;align-items:center}.icon-btn,.avatar-btn{border:1px solid var(--line);background:#131b30;color:white;width:39px;height:39px;border-radius:12px;display:grid;place-items:center}.icon-btn{font-size:16px}.avatar-btn{border-radius:50%;background:#25334e;font-size:13px;font-weight:900;color:var(--cyan)}.content-wrap{width:min(1120px,100% - 36px);margin:0 auto}.welcome-row{display:flex;justify-content:space-between;align-items:center;padding:32px 0 24px;gap:15px}.welcome-row h2{font-size:clamp(22px,4vw,32px);letter-spacing:-1px;margin:0}.welcome-row h2 span:not(.wave){color:var(--cyan)}.wave{color:var(--pink);font-size:20px}.welcome-row .muted{font-size:13px;margin:8px 0 0}.online-pill{white-space:nowrap;border:1px solid #5bf2d52b;background:#59efd50c;border-radius:30px;padding:8px 11px;font-size:9px;letter-spacing:1px;color:#8ef5e4;font-weight:800}.online-pill i{display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;margin-right:6px;box-shadow:0 0 8px var(--cyan)}.hero-banner{min-height:280px;position:relative;overflow:hidden;border:1px solid #9d8cff35;border-radius:24px;background:linear-gradient(105deg,#171d3b 0%,#28204e 55%,#172c43 100%);display:flex;align-items:center;padding:clamp(24px,5vw,48px);isolation:isolate}.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.12;background-image:linear-gradient(#a6b8ff 1px,transparent 1px),linear-gradient(90deg,#a6b8ff 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(90deg,black,transparent 80%)}.hero-copy{max-width:470px;z-index:2}.hero-tag{display:inline-flex;align-items:center;gap:7px;color:#d8d2ff;font-size:9px;font-weight:900;letter-spacing:1.6px;margin-bottom:13px}.hero-tag span{color:var(--cyan)}.hero-copy h2{font-size:clamp(32px,6vw,53px);line-height:.98;letter-spacing:-2px;margin:0 0 13px;font-weight:950}.hero-copy h2 em{font-style:normal;color:var(--cyan)}.hero-copy p{color:#bdc6e2;max-width:350px;font-size:12px;line-height:1.65;margin:0 0 20px}.hero-copy .primary-btn{font-size:12px;padding:11px 15px}.hero-art{position:absolute;right:4%;top:0;bottom:0;width:40%;min-width:230px;display:grid;place-items:center;opacity:.95}.orbit{position:absolute;border:1px solid #a3a0ff40;border-radius:50%;transform:rotate(-25deg)}.orbit-1{width:245px;height:180px}.orbit-2{width:190px;height:270px;transform:rotate(48deg)}.hero-symbol{position:absolute;font-weight:900;filter:drop-shadow(0 0 25px currentColor)}.x-symbol{font-size:120px;color:var(--cyan);transform:translate(-35px,-6px) rotate(-8deg)}.o-symbol{font-size:110px;color:var(--pink);transform:translate(55px,24px);opacity:.9}.hero-chip{position:absolute;border:1px solid #ffffff2e;background:#10172cbd;border-radius:10px;padding:7px 10px;font-size:9px;letter-spacing:2px;font-weight:900}.chip-one{top:23%;right:14%;color:var(--cyan)}.chip-two{bottom:20%;left:12%;color:#ffb3e0}.catalog-section{padding:35px 0 26px}.section-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}.section-heading .eyebrow{margin-bottom:8px}.section-heading h2{margin:0;font-size:23px;letter-spacing:-.7px}.count-badge{display:inline-grid;place-items:center;margin-left:6px;vertical-align:middle;border-radius:7px;background:#202a45;color:#9fadd0;font-size:10px;padding:4px 6px;letter-spacing:0}.section-caption{font-size:11px;color:#7886a7}.game-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.game-card{min-width:0;border:1px solid var(--line);border-radius:17px;overflow:hidden;background:linear-gradient(150deg,#151d32,#0f1526);transition:transform .2s,border-color .2s}.game-card:hover{transform:translateY(-4px);border-color:#7589c655}.game-cover{height:160px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border:0;width:100%;color:white}.cover-tictactoe{background:radial-gradient(circle at 50% 50%,#31456b,#18213f 65%,#131b32);cursor:pointer}.cover-glow{position:absolute;width:140px;height:140px;border-radius:50%;background:#69f0dc20;filter:blur(20px)}.ttt-mini{display:grid;grid-template-columns:repeat(3,39px);grid-template-rows:repeat(3,39px);gap:4px;transform:rotate(-7deg);filter:drop-shadow(0 7px 20px #0005)}.ttt-mini i{display:grid;place-items:center;border:1px solid #9af7ed65;background:#1a2c43;border-radius:7px;font-size:26px;font-style:normal;font-weight:900;color:var(--cyan)}.ttt-mini i:nth-child(3n){color:var(--pink)}.cover-label{position:absolute;top:12px;left:12px;font-size:8px;letter-spacing:1px;font-weight:900;border-radius:6px;padding:6px 7px;background:#0b1222a8;color:var(--cyan);border:1px solid #69f0dc3d;z-index:2}.cover-bottom{position:absolute;bottom:12px;left:12px;font-size:8px;letter-spacing:1.2px;font-weight:800;color:#b5c3e5}.cover-chess{background:radial-gradient(circle at 50% 40%,#63578e,#252343 72%)}.chess-piece{font-size:96px;color:#f1e9ff;text-shadow:0 10px 25px #0b091e;transform:translateY(7px)}.cover-mahjong{background:radial-gradient(circle at 50% 40%,#4a6d69,#1b353d 75%)}.cover-mahjong .cover-label{color:#d3fff1;border-color:#a5ffe02b}.mahjong-tiles{display:flex;gap:5px;transform:rotate(-8deg)}.mahjong-tiles i{width:42px;height:59px;border-radius:5px;display:grid;place-items:center;background:linear-gradient(90deg,#e3e8d6,#fffce9);box-shadow:0 5px 12px #071b1d7a;color:#c74655;font-size:24px;font-style:normal;font-weight:900;border-bottom:4px solid #b8c6b6}.mahjong-tiles i:nth-child(2){transform:translateY(-9px);color:#397b66}.cover-dev{background:radial-gradient(circle at 50% 45%,#3b3158,#1b1a31 72%)}.cover-dev .cover-label{color:#d7c6ff;border-color:#c2a4ff38}.dev-symbol{font-size:95px;color:#b2a2ff;text-shadow:0 0 35px #a18aff75;transform:rotate(-20deg)}.game-info{display:flex;align-items:start;justify-content:space-between;gap:8px;padding:14px 12px 16px}.game-info h3{font-size:13px;margin:0 0 5px}.game-info p{font-size:10px;line-height:1.4;color:var(--muted);margin:0}.status{flex-shrink:0;font-size:7px;letter-spacing:.7px;font-weight:900;padding:6px 7px;border-radius:6px}.status-live{color:#74f6df;background:#4ef2d510;border:1px solid #4ef2d52a}.status-soon{color:#d0c9ff;background:#9b8cff12;border:1px solid #9b8cff2a}.status-dev{color:#ffc6e6;background:#ff78c810;border:1px solid #ff78c82a}.catalog-footnote{color:#687695;font-size:10px;line-height:1.6;margin:17px 0 0}.footer{display:flex;justify-content:space-between;padding:18px 0 25px;border-top:1px solid #ffffff0c;color:#677492;font-size:9px;letter-spacing:1px}.footer b{color:var(--cyan)}.back-btn{border:1px solid var(--line);border-radius:11px;padding:10px 13px;color:#d7def3;background:#121a2d;font-size:11px;font-weight:750}.back-btn span{font-size:16px;vertical-align:-1px;margin-right:5px}.game-topbar .brand{position:absolute;left:50%;transform:translateX(-50%)}.game-layout{width:min(560px,100% - 32px);margin:0 auto;padding:32px 0 24px}.game-heading{text-align:center;margin-bottom:23px}.game-heading .eyebrow{margin-bottom:8px}.game-heading h1{font-size:clamp(30px,7vw,40px);letter-spacing:-1.5px;margin:0}.game-heading h1 span{color:var(--cyan)}.game-heading .muted{font-size:12px;margin:8px 0 0}.game-panel{padding:20px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#141d33,#0e1425);box-shadow:0 22px 65px #0003}.match-toolbar{display:flex;align-items:center;justify-content:space-between}.mode-switch{padding:4px;display:flex;background:#090f1e;border:1px solid #ffffff0c;border-radius:11px;gap:3px}.mode-btn{border:0;border-radius:8px;background:transparent;color:#8390af;padding:8px 13px;font-size:11px;font-weight:800}.mode-btn.active{background:#25314b;color:var(--cyan);box-shadow:0 2px 8px #0003}.restart-btn{border:1px solid var(--line);border-radius:10px;padding:8px 11px;background:#182239;color:#d6e0fa;font-size:13px}.restart-btn span{font-size:10px;margin-left:4px}.score-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin:22px 0 19px}.score-player{display:flex;align-items:center;gap:9px;min-width:0;padding:10px;border:1px solid transparent;border-radius:13px;background:#ffffff04}.score-player.active-player{border-color:#69f0dc3d;background:#69f0dc0b}.score-symbol{font-size:28px;font-weight:900;width:28px;text-align:center}.x-color{color:var(--cyan)!important}.o-color{color:var(--pink)!important}.score-player div{display:flex;flex-direction:column;min-width:0;gap:3px}.score-player b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.score-player small{font-size:7px;letter-spacing:1px;color:#7381a0}.score-player strong{font-size:20px;margin-left:auto}.score-divider{font-size:9px;font-weight:900;color:#687594}.turn-status{display:flex;align-items:center;justify-content:center;gap:7px;color:#d5def3;font-size:12px;margin:8px 0 15px}.turn-status b{font-size:16px}.turn-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 10px var(--cyan)}.ttt-board{width:min(100%,355px);aspect-ratio:1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 auto}.ttt-cell{border:1px solid #34415f;border-radius:15px;background:linear-gradient(145deg,#1b2741,#141d32);color:var(--cyan);font-size:clamp(42px,12vw,70px);font-weight:850;display:grid;place-items:center;transition:transform .12s,background .2s,border-color .2s;min-width:0;aspect-ratio:1}.ttt-cell:not(:disabled):hover{border-color:#69f0dc9c;background:#243550;transform:scale(.98)}.ttt-cell:active{transform:scale(.94)}.ttt-cell.mark-o{color:var(--pink)}.ttt-cell.winning-cell{background:#1d4548;border-color:var(--cyan);box-shadow:inset 0 0 20px #69f0dc13;animation:winPulse .8s ease-in-out infinite alternate}.ttt-cell:disabled{cursor:default}.result-banner{margin:15px auto 0;text-align:center;border:1px solid #69f0dc3a;background:#69f0dc0b;color:#a8ffef;padding:12px;border-radius:12px;font-size:13px;font-weight:850;animation:popIn .3s ease}.result-banner.loss{border-color:#ff78c84a;background:#ff78c80c;color:#ffb5df}.result-banner.draw{border-color:#a5b5db44;background:#a5b5db0b;color:#dce5ff}.game-hint{text-align:center;color:#7482a1;font-size:10px;margin:16px 0 0}.local-note{text-align:center;color:#667391;font-size:10px;margin:15px 0 0}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:#18223a;color:#eaf1ff;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:30;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}@keyframes popIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}@keyframes winPulse{from{box-shadow:inset 0 0 12px #69f0dc08}to{box-shadow:inset 0 0 24px #69f0dc22}}@media(min-width:900px){.game-layout{padding-top:45px}.game-panel{padding:24px 30px}.ttt-board{gap:10px}}@media(max-width:760px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-cover{height:145px}.hero-banner{min-height:275px}.hero-art{right:-45px;opacity:.48;min-width:220px}.hero-copy{max-width:360px}.hero-copy p{max-width:290px}.welcome-row{padding-top:26px}.game-info{padding:12px 10px 14px}.status{font-size:7px}}@media(max-width:420px){.content-wrap{width:calc(100% - 28px)}.topbar{padding:0 14px;height:64px}.brand{font-size:11px;gap:7px}.brand-icon{width:30px;height:30px}.welcome-row{align-items:flex-start}.online-pill{font-size:8px;padding:7px 8px;margin-top:3px}.hero-banner{padding:24px 20px;border-radius:19px;min-height:270px}.hero-copy h2{font-size:36px}.hero-copy p{max-width:250px;font-size:11px}.hero-art{right:-105px;opacity:.35}.section-heading h2{font-size:21px}.section-caption{font-size:9px}.game-cover{height:130px}.ttt-mini{grid-template-columns:repeat(3,34px);grid-template-rows:repeat(3,34px)}.ttt-mini i{font-size:22px}.game-info h3{font-size:12px}.game-info p{font-size:9px}.status{padding:5px;font-size:6px}.game-topbar .brand{display:none}.back-btn{font-size:10px}.game-panel{padding:13px;border-radius:20px}.score-row{gap:5px}.score-player{padding:8px 5px;gap:5px}.score-symbol{font-size:24px;width:23px}.score-player b{font-size:9px}.score-player strong{font-size:17px}.ttt-board{gap:6px}.ttt-cell{border-radius:12px}.login-card{padding:32px 22px 25px}}
+
+/* KYTRICVSOFT beta additions: Chess and Mahjong */
+.game-cover-button{cursor:pointer;text-align:initial;padding:0;font-family:inherit}.game-cover-button:focus-visible{outline:3px solid var(--cyan);outline-offset:-4px}.chess-layout,.mahjong-layout{width:min(620px,100% - 28px)}.chess-panel,.mahjong-panel{padding:clamp(10px,3vw,22px)}.chess-toolbar,.mahjong-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.chess-toolbar .turn-status{margin:0;justify-content:flex-start;min-height:36px}.chess-board{width:min(100%,520px);aspect-ratio:1;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border:3px solid #3c4968;border-radius:7px;overflow:hidden;margin:0 auto;box-shadow:0 12px 30px #0004}.chess-square{display:grid;place-items:center;position:relative;min-width:0;min-height:0;border:0;padding:0;font-size:clamp(20px,5.5vw,43px);line-height:1}.chess-square.light{background:#d9dfd1;color:#222b36}.chess-square.dark{background:#668878;color:#111b22}.chess-square.white-piece{text-shadow:0 1px 2px #0008,0 0 1px #111}.chess-square.black-piece{text-shadow:0 1px 1px #fff5}.chess-square.selected{box-shadow:inset 0 0 0 4px #69f0dc;z-index:1}.chess-square.legal-target:after{content:"";position:absolute;width:24%;height:24%;border-radius:50%;background:#09132270}.chess-square.capture-target:after{content:"";position:absolute;inset:3px;border:4px solid #ff78c8d9;border-radius:50%;pointer-events:none}.chess-square.king-check{background:#d65e6c!important;box-shadow:inset 0 0 0 4px #ffb7be}.chess-square:active{filter:brightness(1.12)}.mahjong-stat{display:flex;flex-direction:column;gap:3px;min-width:52px}.mahjong-stat small{font-size:8px;letter-spacing:1px;color:#8492b3}.mahjong-stat b{font-size:17px;color:var(--cyan)}.mahjong-board{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.mahjong-tile{aspect-ratio:3/4;min-width:0;border:1px solid #7ba59b;border-bottom:4px solid #557b70;border-radius:9px;background:linear-gradient(145deg,#e5f0df,#b7d0bf);color:#244c40;font-size:clamp(18px,5vw,32px);font-weight:900;box-shadow:0 4px 0 #122a2c6b,0 8px 14px #0002;transition:transform .16s,background .16s;display:grid;place-items:center;padding:0}.mahjong-tile:not(.matched):hover{transform:translateY(-2px)}.mahjong-tile:not(.revealed):not(.matched){background:linear-gradient(145deg,#2e655c,#17433f);border-color:#79b8a6;color:#d4fff1;font-size:28px}.mahjong-tile.revealed{background:linear-gradient(145deg,#fff9e8,#e3e5c9);color:#b13c53;border-color:#c7d0ae}.mahjong-tile.matched{background:linear-gradient(145deg,#24463f,#152e2a);color:#9ef3d9;border-color:#69f0dc;opacity:.68;box-shadow:none;transform:scale(.96)}.mahjong-toolbar .restart-btn{white-space:nowrap}@media(max-width:420px){.mahjong-board{gap:5px}.mahjong-tile{border-radius:6px;border-bottom-width:3px}.chess-square{font-size:clamp(18px,6.1vw,28px)}.chess-toolbar{align-items:flex-start}.chess-toolbar .turn-status{font-size:10px}.mahjong-stat small{font-size:7px}.mahjong-stat b{font-size:15px}.mahjong-toolbar .restart-btn{padding:8px}.mahjong-toolbar .restart-btn span{font-size:9px}}
+
+
+/* PATCH 2: classic top-down chess, larger Mahjong, drawer and local developer panel */
+.hamburger-btn{font-size:21px;font-weight:900;min-width:42px;color:var(--cyan);border-color:#69f0dc55;box-shadow:0 0 18px #69f0dc12}
+.menu-backdrop{position:fixed;inset:0;background:#030611b8;backdrop-filter:blur(3px);z-index:70;opacity:1;transition:opacity .2s}
+.site-drawer{position:fixed;z-index:71;inset:0 auto 0 0;width:min(330px,88vw);padding:20px 16px 16px;background:linear-gradient(160deg,#151f38,#090e1c);border-right:1px solid var(--line);box-shadow:25px 0 80px #0007;transform:translateX(-105%);transition:transform .25s ease;display:flex;flex-direction:column;overflow-y:auto}
+.drawer-overlay{position:fixed;inset:0;background:#0008;z-index:70;display:none}.drawer-overlay.show{display:block}body.drawer-open{overflow:hidden}.site-drawer.open{transform:translateX(0)}.drawer-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:22px;border-bottom:1px solid var(--line)}.drawer-caption{font-size:9px;letter-spacing:1.8px;font-weight:900;color:#7382a4;margin:22px 10px 9px}.drawer-link{display:flex;align-items:center;gap:11px;width:100%;min-height:45px;padding:10px 12px;border:1px solid transparent;border-radius:11px;background:transparent;color:#e7edff;text-decoration:none;text-align:left;font-size:13px;font-weight:700}.drawer-link span{flex:1}.drawer-link small{font-size:9px;color:#a8b5d1}.drawer-link:hover,.drawer-link:focus-visible{background:#69f0dc0d;border-color:#69f0dc30}.drawer-divider{height:1px;background:var(--line);margin:15px 4px 0}.developer-link{color:#ffe3a4;background:#f8c45d0b;border-color:#f8c45d28}.drawer-footer{margin-top:auto;padding:25px 8px 5px;font-size:9px;letter-spacing:1px;color:#7582a1}.drawer-footer b{color:var(--cyan)}
+.maintenance-banner{position:sticky;top:72px;z-index:9;padding:12px 16px;text-align:center;color:#ffe1a0;background:#47351a;border-bottom:1px solid #f8c45d44;font-size:12px;font-weight:800}
+.chess-layout{width:min(720px,100% - 28px)}.chess-panel{padding:clamp(10px,2.5vw,20px)}.chess-board{width:min(100%,600px);border:3px solid #d0d5cb;border-radius:2px;box-shadow:0 10px 25px #0003;transform:none}.chess-square{border-radius:0!important;font-family:"Segoe UI Symbol","DejaVu Sans",serif;font-size:clamp(24px,7vw,52px);font-weight:400;line-height:1;text-shadow:none!important;box-shadow:none}.chess-square.light{background:#f0eadb;color:#222}.chess-square.dark{background:#769b80;color:#17231b}.chess-square.white-piece{color:#fffdf5;-webkit-text-stroke:1px #222;text-shadow:0 1px 1px #333!important}.chess-square.black-piece{color:#1b2420;text-shadow:none!important}.chess-square.selected{box-shadow:inset 0 0 0 4px #2c9f91!important}.chess-square.legal-target:after{background:#13241b70}.chess-square.capture-target:after{border:3px solid #d74d76;border-radius:0}
+.mahjong-layout{width:min(800px,100% - 24px)}.mahjong-panel{padding:clamp(10px,2.5vw,22px)}.mahjong-board{width:min(100%,720px);margin:0 auto;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.mahjong-tile{aspect-ratio:4/3;min-height:74px;border-radius:10px;border-bottom-width:5px;font-size:clamp(30px,8vw,54px);box-shadow:0 5px 0 #122a2c6b,0 9px 15px #0002}.mahjong-tile:not(.revealed):not(.matched){font-size:clamp(28px,7vw,46px)}.mahjong-tile.revealed{font-size:clamp(30px,8vw,54px)}.mahjong-toolbar{flex-wrap:wrap}.mahjong-stat{min-width:65px}.mahjong-stat b{font-size:20px}
+.developer-wrap{padding-bottom:40px}.developer-screen .topbar{position:sticky}.developer-screen .brand{position:absolute;left:50%;transform:translateX(-50%)}.role-pill{font-size:9px;color:#ffe3a4;border:1px solid #f8c45d35;background:#f8c45d0b;border-radius:9px;padding:9px}.developer-wrap .welcome-row{padding-top:25px}.developer-wrap .welcome-row h2 span{color:var(--cyan)}.notice-card{border:1px solid #f8c45d3d;background:#f8c45d0a;border-radius:14px;padding:15px;margin:0 0 16px;color:#ffe2a3;font-size:12px}.notice-card p{margin:7px 0 0;color:#b7c1d9;line-height:1.55}.developer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.dev-panel-card{border:1px solid var(--line);border-radius:17px;padding:18px;background:linear-gradient(150deg,#151e33,#0d1424);min-width:0}.dev-panel-card h3{margin:0 0 9px;font-size:17px}.dev-panel-card .muted{font-size:12px;margin:0 0 14px}.maintenance-switch{display:flex;align-items:center;gap:10px;flex-wrap:wrap;cursor:pointer;font-size:12px}.maintenance-switch input{position:absolute;opacity:0;pointer-events:none}.switch-track{width:42px;height:24px;border-radius:20px;background:#35415b;padding:3px;transition:.2s;flex:none}.switch-track:after{content:"";display:block;width:18px;height:18px;background:#dce4f8;border-radius:50%;transition:.2s}.maintenance-switch input:checked+.switch-track{background:#9c6a27}.maintenance-switch input:checked+.switch-track:after{transform:translateX(18px);background:#ffe0a0}.small-muted{font-size:10px;line-height:1.55;color:#8795b4}.upload-zone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;border:1px dashed #69f0dc60;border-radius:13px;background:#69f0dc08;padding:20px 10px;cursor:pointer}.upload-zone span{font-size:28px}.upload-zone b{font-size:12px}.upload-zone small{font-size:10px;color:#8291b2}.zip-preview{margin-top:12px;padding:12px;border-radius:11px;border:1px solid #69f0dc30;background:#69f0dc09;font-size:11px;line-height:1.6}.leaderboard-card{margin-top:15px}.leaderboard-card .section-heading{align-items:center}.leaderboard-card .section-heading h3{margin:0}.analytics-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}.analytics-stats>div{padding:14px;border:1px solid var(--line);border-radius:12px;background:#ffffff04;display:flex;flex-direction:column;gap:6px}.analytics-stats small{font-size:10px;color:#8795b4}.analytics-stats b{font-size:27px;color:var(--cyan)}.leaderboard-table-wrap{overflow-x:auto}.leaderboard-table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}.leaderboard-table th,.leaderboard-table td{padding:12px 10px;border-bottom:1px solid var(--line)}.leaderboard-table th{color:#8593b4;font-size:9px;letter-spacing:.8px;text-transform:uppercase}.leaderboard-table td:first-child{color:var(--cyan);font-weight:900}.leaderboard-table td:last-child{font-weight:800}
+@media(max-width:600px){.maintenance-banner{top:64px}.developer-grid{grid-template-columns:1fr}.developer-screen .topbar{padding-left:10px;padding-right:10px}.developer-screen .back-btn{font-size:10px;padding:9px}.developer-screen .brand{font-size:9px;gap:5px}.developer-screen .brand-icon{width:25px;height:25px}.role-pill{font-size:7px;padding:7px}.mahjong-board{gap:7px}.mahjong-tile{min-height:65px;aspect-ratio:1/1.1;border-radius:8px}.mahjong-toolbar .restart-btn{margin-left:auto}.chess-board{border-width:2px}.chess-square{font-size:clamp(25px,8.5vw,42px)}}
+
+  
+/* UPDATE 5: interactive extras */
+.quick-tools{display:grid;gap:9px;margin:18px 0 4px}.quick-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.quick-row input{flex:1;min-width:160px;padding:12px;border-radius:12px;border:1px solid var(--line);background:#10182b;color:var(--text)}.extra-cover{background:radial-gradient(circle at 50% 40%,#315b72,#172039 76%);cursor:pointer}.fav-btn{border:1px solid var(--line);background:#182239;color:var(--cyan);border-radius:9px;padding:5px 8px}.tools-grid{display:flex!important;overflow-x:auto;overflow-y:hidden}.tools-grid .game-card{flex:0 0 210px}.tool-workspace .tool-panel button{margin-top:8px}.tool-panel .field-row{display:flex;gap:8px;flex-wrap:wrap}.tool-panel .field-row>*{flex:1;min-width:90px}.dark-light{--bg:#f2f5ff;--panel:#fff;--panel2:#e7edff;--text:#17213a;--muted:#53617d;--line:rgba(40,60,100,.18)}body.light-mode{background:#f2f5ff;color:#17213a}body.light-mode .topbar{background:#f2f5ffe8}body.light-mode .game-card,body.light-mode .tool-panel,body.light-mode .game-panel{background:#fff;color:#17213a}body.light-mode .quick-row input,body.light-mode .tool-panel input,body.light-mode .tool-panel textarea,body.light-mode .tool-panel select{background:#f6f8ff;color:#17213a}
+
+.auth-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:5px;border:1px solid var(--line);border-radius:14px;background:#080e1b;margin:0 0 20px}.auth-switch button{border:0;border-radius:10px;background:transparent;color:var(--muted);font-weight:800;padding:10px}.auth-switch button.active{background:linear-gradient(100deg,var(--cyan),#a2ffe8);color:#07141d}.auth-message{min-height:18px;font-size:11px;color:var(--muted);margin:12px 0 0;text-align:left}.auth-help{font-size:10px;color:#8291b2;line-height:1.6;margin:16px 0 0}.dev-action-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.dev-action-row a{color:var(--cyan);font-size:12px;overflow-wrap:anywhere}.upload-check{font-size:11px;line-height:1.6;margin-top:10px;overflow-wrap:anywhere}.auth-secondary{width:100%;margin-top:10px;border:1px solid var(--line);border-radius:12px;padding:11px;background:#151e34;color:var(--text);font-weight:750}
+</style>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div id="maintenance-banner" class="maintenance-banner hidden" role="status">🔧 KYTRICVSOFT sedang maintenance. Coba lagi sebentar, ya!</div>
+  <div id="menu-backdrop" class="menu-backdrop hidden"></div>
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+  <aside id="site-drawer" class="site-drawer" aria-label="Menu utama" aria-hidden="true">
+    <div class="drawer-head"><div class="brand"><span class="brand-icon">K✦</span><span>KYTRICV <b>SOFT</b></span></div><button id="menu-close" class="icon-btn" type="button" aria-label="Tutup menu">✕</button></div>
+    <p class="drawer-caption">NAVIGASI</p>
+    <button class="drawer-link" data-drawer-action="home" type="button">🏠 <span>Beranda</span></button>
+    <button class="drawer-link" data-drawer-action="games" type="button">🎮 <span>Semua Game</span></button>
+    <button class="drawer-link" data-drawer-action="quran" type="button">📖 <span>Al-Qur'an & Ngaji</span><small>Rencana</small></button>
+    <div class="drawer-divider"></div>
+    <p class="drawer-caption">KOMUNITAS</p>
+    <a class="drawer-link" href="https://whatsapp.com/channel/0029Vb8utcA7dmeeGIza7n3l" target="_blank" rel="noopener noreferrer">🟢 <span>Saluran WhatsApp</span> ↗</a>
+    <a class="drawer-link" href="https://t.me/+I2U2HWQwRbs1YzVl" target="_blank" rel="noopener noreferrer">✈️ <span>Grup Telegram</span> ↗</a>
+    <div id="developer-nav-wrap" class="hidden"><div class="drawer-divider"></div><p class="drawer-caption">KHUSUS DEVELOPER</p><button class="drawer-link developer-link" data-drawer-action="developer" type="button">👑 <span>Developer Panel</span> ↗</button></div>
+    <div class="drawer-footer">DEVELOPER <b>Kyy</b> · KYTRICVSOFT</div>
+  </aside>
+  <main id="app">
+    <section id="login-screen" class="screen login-screen">
+      <div class="login-card">
+        <div class="brand-mark">K<span>✦</span></div>
+        <p class="eyebrow">YOUR NEXT LEVEL STARTS HERE</p>
+        <h1>KYTRICV <span>SOFT</span></h1>
+        <p class="muted intro">Satu tempat buat rehat, main, dan naik level.</p>
+        <div class="auth-switch" role="tablist" aria-label="Pilih akses akun">
+          <button id="auth-login-tab" class="active" type="button" role="tab" aria-selected="true">Masuk</button>
+          <button id="auth-register-tab" type="button" role="tab" aria-selected="false">Daftar</button>
+        </div>
+        <form id="login-form">
+          <label for="player-name">Username</label>
+          <input id="player-name" name="player-name" type="text" maxlength="20" minlength="3" placeholder="Masukkan username" autocomplete="username" required>
+          <label for="player-password" class="password-label">Password</label>
+          <input id="player-password" name="player-password" type="password" minlength="6" maxlength="72" placeholder="Masukkan password" autocomplete="current-password" required>
+          <button id="auth-submit" class="primary-btn full-btn" type="submit">Masuk ke arena <span>↗</span></button>
+          <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+        </form>
+        <p class="auth-help">Akun disimpan di browser/perangkat ini. Akun tidak otomatis berpindah ke HP lain. Jangan gunakan password pribadi yang dipakai di akun lain.</p>
+      </div>
+      <div class="login-decoration"><span class="deco-orb orb-a"></span><span class="deco-orb orb-b"></span><span class="deco-orb orb-c"></span></div>
+    </section>
+
+    <section id="dashboard-screen" class="screen dashboard-screen hidden">
+      <header class="topbar">
+        <a href="#" class="brand" aria-label="KYTRICVSOFT home"><span class="brand-icon">K✦</span><span>KYTRICV <b>SOFT</b></span></a>
+        <div class="top-actions"><button id="menu-open" class="icon-btn" type="button" aria-label="Buka menu">☰</button>
+          <button id="menu-trigger" class="icon-btn hamburger-btn" type="button" aria-label="Buka menu" aria-expanded="false" title="Menu">☰</button>
+          <button id="sound-toggle" class="icon-btn" type="button" aria-label="Matikan suara" title="Pengaturan suara">🔊</button>
+          <button id="logout-btn" class="avatar-btn" type="button" title="Keluar"><span id="avatar-letter">P</span></button>
+        </div>
+      </header>
+      <div class="content-wrap">
+        <section class="welcome-row">
+          <div><p class="eyebrow">PLAYER HUB / 001</p><h2>Gas main, <span id="welcome-name">Player</span> <span class="wave">✦</span></h2><p class="muted">Pilih game, dan mulai tantangan lu.</p></div>
+          <div class="online-pill"><i></i> PLAYER HUB</div>
+        </section>
+
+        <section class="hero-banner">
+          <div class="hero-copy">
+            <div class="hero-tag"><span>✦</span> GAME OF THE MOMENT</div>
+            <h2>THINK FAST.<br><em>PLAY SMART.</em></h2>
+            <p>Asah strategi lu di Tic Tac Toe. Tantang bot atau ajak teman main bareng.</p>
+            <button id="hero-play" class="primary-btn" type="button">Main sekarang <span>→</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div>
+            <div class="hero-symbol x-symbol">×</div><div class="hero-symbol o-symbol">○</div>
+            <div class="hero-chip chip-one">01</div><div class="hero-chip chip-two">PLAY</div>
+          </div>
+          <div class="hero-grid"></div>
+        </section>
+
+        <section class="quick-tools"><div class="quick-row"><input id="catalog-search" type="search" placeholder="🔎 Cari game atau tools..." aria-label="Cari game atau tools"><button id="theme-toggle" class="restart-btn" type="button">☀️ Tema</button></div><div class="quick-row"><button id="show-favorites" class="restart-btn" type="button">⭐ Favorit</button><button id="show-history" class="restart-btn" type="button">🕘 Riwayat</button><span id="activity-status" class="small-muted">Semua fitur gratis</span></div><div id="activity-panel" class="tool-result hidden"></div></section>
+        <section class="catalog-section">
+          <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>Game pilihan <span class="count-badge">06+</span></h2></div><span class="section-caption">Pilih petualangan lu</span></div>
+          <div class="game-grid">
+            <article class="game-card featured-card">
+              <button class="game-cover cover-tictactoe" id="card-tictactoe" type="button" aria-label="Mainkan Tic Tac Toe">
+                <span class="cover-glow"></span><span class="cover-label">PLAYABLE</span>
+                <span class="ttt-mini"><i>×</i><i></i><i>○</i><i></i><i>×</i><i></i><i>○</i><i></i><i>×</i></span>
+                <span class="cover-bottom">STRATEGY / CASUAL</span>
+              </button>
+              <div class="game-info"><div><h3>Tic Tac Toe</h3><p>Langkah kecil, duel pikiran.</p></div><span class="status status-live">PLAY NOW</span></div>
+            </article>
+            <article class="game-card">
+              <button class="game-cover cover-chess game-cover-button" id="card-chess" type="button" aria-label="Mainkan Chess">
+                <span class="cover-label">PLAYABLE BETA</span><span class="chess-piece">♞</span><span class="cover-bottom">STRATEGY / CLASSIC</span>
+              </button>
+              <div class="game-info"><div><h3>Chess</h3><p>Catur klasik untuk dua pemain.</p></div><span class="status status-live">PLAY NOW</span></div>
+            </article>
+            <article class="game-card">
+              <button class="game-cover cover-mahjong game-cover-button" id="card-mahjong" type="button" aria-label="Mainkan Mahjong">
+                <span class="cover-label">PLAYABLE</span><div class="mahjong-tiles"><i>竹</i><i>中</i><i>發</i></div><span class="cover-bottom">PUZZLE / PAIR MATCH</span>
+              </button>
+              <div class="game-info"><div><h3>Mahjong</h3><p>Cari dan cocokkan pasangan ubin.</p></div><span class="status status-live">PLAY NOW</span></div>
+            </article>
+            <article class="game-card">
+              <a class="game-cover game-cover-button" href="horror.html" target="_blank" rel="noopener" style="text-decoration:none;background:radial-gradient(circle at 50% 40%,#733a45,#17111c 75%);">
+                <span class="cover-label">PLAYABLE RELEASE</span><span class="tool-symbol">🔦</span><span class="cover-bottom">HORROR / SURVIVAL</span>
+              </a>
+              <div class="game-info"><div><h3>KYTRICV: THE LAST SIGNAL</h3><p>Jelajahi gedung gelap, cari kunci dan fuse, hindari makhluk.</p></div><a class="status status-live" href="horror.html" target="_blank" rel="noopener" style="text-decoration:none">MAIN</a></div>
+            </article>
+            <article class="game-card">
+              <a class="game-cover game-cover-button" href="rpg.html" target="_blank" rel="noopener" style="text-decoration:none;background:radial-gradient(circle at 50% 40%,#245b8d,#11162a 75%);">
+                <span class="cover-label">PLAYABLE RELEASE</span><span class="tool-symbol">⚔️</span><span class="cover-bottom">RPG / ADVENTURE</span>
+              </a>
+              <div class="game-info"><div><h3>KYTRICV: SHATTERED WORLD</h3><p>Jelajahi dunia, lawan monster, ambil quest dan naik level.</p></div><a class="status status-live" href="rpg.html" target="_blank" rel="noopener" style="text-decoration:none">MAIN</a></div>
+            </article>
+            <article class="game-card dev-card">
+              <div class="game-cover cover-dev">
+                <span class="cover-label">IN DEVELOPMENT</span><span class="dev-symbol">⌁</span><span class="cover-bottom">ADVENTURE / STORY</span>
+              </div>
+              <div class="game-info"><div><h3>Project Vault</h3><p>Slot proyek berikutnya.</p></div><span class="status status-dev">WIP</span></div>
+            </article>
+            <article class="game-card"><button class="game-cover extra-cover" data-extra="snake" type="button"><span class="cover-label">PLAYABLE</span><span class="tool-symbol">🐍</span><span class="cover-bottom">ARCADE / SNAKE</span></button><div class="game-info"><div><h3>Snake</h3><p>Makan buah, jangan tabrak diri sendiri.</p></div><button class="fav-btn" data-fav="Snake" aria-label="Favorit Snake">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-extra="memory" type="button"><span class="cover-label">PLAYABLE</span><span class="tool-symbol">🧠</span><span class="cover-bottom">MEMORY / MATCH</span></button><div class="game-info"><div><h3>Memory Match</h3><p>Latih ingatan dengan pasangan kartu.</p></div><button class="fav-btn" data-fav="Memory Match" aria-label="Favorit Memory Match">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-extra="2048" type="button"><span class="cover-label">PLAYABLE</span><span class="tool-symbol">🔢</span><span class="cover-bottom">PUZZLE / 2048</span></button><div class="game-info"><div><h3>2048 Mini</h3><p>Gabungkan angka dengan tombol arah.</p></div><button class="fav-btn" data-fav="2048 Mini" aria-label="Favorit 2048 Mini">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-extra="rps" type="button"><span class="cover-label">PLAYABLE</span><span class="tool-symbol">✂️</span><span class="cover-bottom">QUICK / DUEL</span></button><div class="game-info"><div><h3>Suit</h3><p>Batu, gunting, kertas melawan bot.</p></div><button class="fav-btn" data-fav="Suit" aria-label="Favorit Suit">☆</button></div></article>
+          </div>
+          <p class="catalog-footnote">Game klasik siap dimainkan di browser. Catur dan fitur eksternal masih memiliki batasan versi beta.</p>
+        </section>
+
+        <section class="catalog-section tools-section">
+          <div class="section-heading"><div><p class="eyebrow">TOOLS & EXTRAS</p><h2>Alat lainnya <span class="count-badge">02</span></h2></div><span class="section-caption">Fitur berikutnya</span></div>
+          <div class="game-grid tools-grid">
+            <article class="game-card"><button class="game-cover cover-quran tool-cover-button" id="open-quran" type="button"><span class="cover-label">COMING SOON</span><span class="tool-symbol">۞</span><span class="cover-bottom">QURAN / NGAJI</span></button><div class="game-info"><div><h3>Al-Qur'an & Ngaji</h3><p>Rencana fitur baca dan belajar ngaji.</p></div><span class="status status-soon">SOON</span></div></article>
+            <article class="game-card"><button class="game-cover cover-downloader tool-cover-button" id="open-downloader" type="button"><span class="cover-label">BETA UI</span><span class="tool-symbol">📥</span><span class="cover-bottom">SOCIAL DOWNLOADER</span></button><div class="game-info"><div><h3>Social Downloader</h3><p>TikTok, Instagram, YouTube, Pinterest.</p></div><span class="status status-dev">BETA</span></div></article>
+            <article class="game-card"><button class="game-cover cover-amfinder tool-cover-button" id="open-amfinder" type="button"><span class="cover-label">BETA</span><span class="tool-symbol">🔎</span><span class="cover-bottom">ALIGHT MOTION PRESETS</span></button><div class="game-info"><div><h3>AM Finder</h3><p>Cari link preset dari caption/komentar.</p></div><span class="status status-dev">BETA</span></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-tool="calculator" type="button"><span class="cover-label">READY</span><span class="tool-symbol">🧮</span><span class="cover-bottom">CALCULATOR</span></button><div class="game-info"><div><h3>Kalkulator</h3><p>Hitung langsung di browser.</p></div><button class="fav-btn" data-fav="Kalkulator">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-tool="timer" type="button"><span class="cover-label">READY</span><span class="tool-symbol">⏱️</span><span class="cover-bottom">TIMER & STOPWATCH</span></button><div class="game-info"><div><h3>Timer & Stopwatch</h3><p>Hitung mundur atau waktu berjalan.</p></div><button class="fav-btn" data-fav="Timer & Stopwatch">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-tool="notes" type="button"><span class="cover-label">READY</span><span class="tool-symbol">📝</span><span class="cover-bottom">LOCAL NOTES</span></button><div class="game-info"><div><h3>Catatan</h3><p>Simpan catatan di perangkat ini.</p></div><button class="fav-btn" data-fav="Catatan">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-tool="password" type="button"><span class="cover-label">READY</span><span class="tool-symbol">🔐</span><span class="cover-bottom">PASSWORD GENERATOR</span></button><div class="game-info"><div><h3>Password Generator</h3><p>Buat password acak lokal.</p></div><button class="fav-btn" data-fav="Password Generator">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-tool="picker" type="button"><span class="cover-label">READY</span><span class="tool-symbol">🎲</span><span class="cover-bottom">RANDOM PICKER</span></button><div class="game-info"><div><h3>Random Picker</h3><p>Pilih nama secara acak.</p></div><button class="fav-btn" data-fav="Random Picker">☆</button></div></article>
+            <article class="game-card"><button class="game-cover extra-cover" data-tool="qr" type="button"><span class="cover-label">BETA</span><span class="tool-symbol">🔗</span><span class="cover-bottom">QR GENERATOR</span></button><div class="game-info"><div><h3>QR Generator</h3><p>Buat QR melalui layanan eksternal.</p></div><button class="fav-btn" data-fav="QR Generator">☆</button></div></article>
+          </div>
+          <p class="catalog-footnote">Tools digeser ke samping. Downloader memeriksa tautan; pengunduhan langsung dan pencarian otomatis memerlukan layanan/API yang sesuai.</p>
+        </section>
+        <footer class="footer"><span>© 2026 KYTRICVSOFT</span><span>KYTRICVSOFT · DEVELOPER <b>Kyy</b> ✦</span></footer>
+      </div>
+    </section>
+
+    <section id="tool-screen" class="screen game-screen hidden"><header class="topbar game-topbar"><button id="back-tools" class="back-btn" type="button"><span>←</span> Dashboard</button><a href="#" class="brand"><span class="brand-icon">K✦</span><span>KYTRICV <b>TOOLS</b></span></a><span></span></header><div class="tool-workspace"><div class="game-heading"><p class="eyebrow">KYTRICV TOOLS</p><h1 id="tool-title">Social <span>Downloader</span></h1><p class="muted" id="tool-subtitle">Tempel tautan konten yang boleh lu unduh.</p></div><div id="downloader-panel" class="tool-panel hidden"><div class="tool-platforms" id="download-platforms"><button data-platform="TikTok" class="active">TikTok</button><button data-platform="Instagram">Instagram</button><button data-platform="YouTube">YouTube</button><button data-platform="Pinterest">Pinterest</button></div><label for="download-url">URL konten</label><input id="download-url" type="url" placeholder="Tempel link video/gambar di sini"><label for="download-quality">Kualitas (opsi pilihan; belum diambil dari sumber)</label><select id="download-quality"><option>Otomatis / kualitas tersedia</option><option>360p</option><option>480p</option><option>720p</option><option>1080p</option><option>Audio saja (jika diizinkan)</option></select><button id="check-download" class="primary-btn full-btn" type="button">Periksa Link</button><div id="download-result" class="tool-result hidden" aria-live="polite"></div><p class="small-muted">Tombol ini memvalidasi URL dan membuka halaman sumber. Unduhan langsung memerlukan layanan/API; pilihan kualitas belum diverifikasi dari sumber.</p></div><div id="amfinder-panel" class="tool-panel hidden"><label for="am-tiktok-url">Link video TikTok</label><input id="am-tiktok-url" type="url" placeholder="https://www.tiktok.com/@.../video/..."><label for="am-caption">Caption (tempel di sini jika ingin diperiksa)</label><textarea id="am-caption" placeholder="Tempel teks caption... "></textarea><label for="am-comments">Komentar yang bisa diakses (tempel teksnya di sini)</label><textarea id="am-comments" placeholder="Tempel komentar yang berisi link preset/XML..."></textarea><button id="find-am-links" class="primary-btn full-btn" type="button">🔎 Cari Link Preset</button><div id="am-result" class="tool-result hidden" aria-live="polite"></div><p class="small-muted">AM Finder memeriksa teks caption/komentar yang lu tempel. Pembacaan otomatis memerlukan layanan/API yang diizinkan platform.</p></div><div id="generic-tool-panel" class="tool-panel hidden"></div></div></section>
+
+    <section id="game-screen" class="screen game-screen hidden">
+      <header class="topbar game-topbar">
+        <button id="back-dashboard" class="back-btn" type="button"><span>←</span> Dashboard</button>
+        <a href="#" class="brand"><span class="brand-icon">K✦</span><span>KYTRICV <b>SOFT</b></span></a>
+        <button id="game-sound-toggle" class="icon-btn" type="button" aria-label="Pengaturan suara">🔊</button>
+      </header>
+      <div class="game-layout">
+        <div class="game-heading"><p class="eyebrow">QUICK MATCH / 001</p><h1>Tic Tac <span>Toe</span></h1><p class="muted">Tiga simbol segaris. Lu bisa menang?</p></div>
+        <div class="game-panel">
+          <div class="match-toolbar">
+            <div class="mode-switch" role="group" aria-label="Mode permainan">
+              <button class="mode-btn active" id="mode-bot" type="button">vs Bot</button>
+              <button class="mode-btn" id="mode-friend" type="button">vs Teman</button>
+            </div>
+            <button id="restart-btn" class="restart-btn" type="button">↻ <span>Ulangi</span></button>
+          </div>
+          <div class="score-row">
+            <div class="score-player active-player" id="score-x"><span class="score-symbol x-color">×</span><div><b id="player-x-label">Lu (X)</b><small id="x-caption">PLAYER 1</small></div><strong id="x-score">0</strong></div>
+            <div class="score-divider">VS</div>
+            <div class="score-player" id="score-o"><span class="score-symbol o-color">○</span><div><b id="player-o-label">Bot (O)</b><small id="o-caption">OPPONENT</small></div><strong id="o-score">0</strong></div>
+          </div>
+          <div id="turn-status" class="turn-status" aria-live="polite"><span class="turn-dot"></span> Giliran lu <b class="x-color">×</b></div>
+          <div id="ttt-board" class="ttt-board" role="group" aria-label="Papan Tic Tac Toe">
+            <button class="ttt-cell" data-index="0" aria-label="Kotak 1"></button><button class="ttt-cell" data-index="1" aria-label="Kotak 2"></button><button class="ttt-cell" data-index="2" aria-label="Kotak 3"></button>
+            <button class="ttt-cell" data-index="3" aria-label="Kotak 4"></button><button class="ttt-cell" data-index="4" aria-label="Kotak 5"></button><button class="ttt-cell" data-index="5" aria-label="Kotak 6"></button>
+            <button class="ttt-cell" data-index="6" aria-label="Kotak 7"></button><button class="ttt-cell" data-index="7" aria-label="Kotak 8"></button><button class="ttt-cell" data-index="8" aria-label="Kotak 9"></button>
+          </div>
+          <div id="result-banner" class="result-banner hidden" role="status"></div>
+          <p class="game-hint">TIP: Amankan tengah, lalu cari tiga simbol segaris.</p>
+        </div>
+        <p class="local-note">Tantang bot atau teman di perangkat yang sama.</p>
+      </div>
+    </section>
+
+    <section id="chess-screen" class="screen game-screen hidden">
+      <header class="topbar game-topbar"><button class="back-btn" id="back-chess" type="button"><span>←</span> Dashboard</button><a href="#" class="brand"><span class="brand-icon">K✦</span><span>KYTRICV <b>SOFT</b></span></a><button class="icon-btn shared-sound" type="button" aria-label="Pengaturan suara">🔊</button></header>
+      <div class="game-layout chess-layout"><div class="game-heading"><p class="eyebrow">CLASSIC DUEL / BETA</p><h1>Chess <span>♟</span></h1><p class="muted">Catur dua pemain di satu perangkat.</p></div>
+        <div class="game-panel chess-panel"><div class="chess-toolbar"><div id="chess-status" class="turn-status" aria-live="polite">Giliran Putih</div><button id="chess-reset" class="restart-btn" type="button">↻ <span>Game baru</span></button></div><div id="chess-board" class="chess-board" role="grid" aria-label="Papan catur"></div><div id="chess-result" class="result-banner hidden" role="status"></div><p class="game-hint">Pilih bidak, lalu pilih kotak tujuan yang disorot. Promosi pion otomatis menjadi ratu. Rokade dan en passant belum tersedia di beta ini.</p></div><p class="local-note">Mode lokal · dua pemain bergantian pada satu perangkat.</p>
+      </div>
+    </section>
+    <section id="mahjong-screen" class="screen game-screen hidden">
+      <header class="topbar game-topbar"><button class="back-btn" id="back-mahjong" type="button"><span>←</span> Dashboard</button><a href="#" class="brand"><span class="brand-icon">K✦</span><span>KYTRICV <b>SOFT</b></span></a><button class="icon-btn shared-sound" type="button" aria-label="Pengaturan suara">🔊</button></header>
+      <div class="game-layout mahjong-layout"><div class="game-heading"><p class="eyebrow">TILE MATCH / BETA</p><h1>Mahjong <span>Tiles</span></h1><p class="muted">Temukan semua pasangan ubin yang sama.</p></div>
+        <div class="game-panel mahjong-panel"><div class="mahjong-toolbar"><div class="mahjong-stat"><small>LANGKAH</small><b id="mahjong-moves">0</b></div><div class="mahjong-stat"><small>PASANGAN</small><b id="mahjong-pairs">0 / 12</b></div><button id="mahjong-reset" class="restart-btn" type="button">↻ <span>Acak ulang</span></button></div><div id="mahjong-board" class="mahjong-board" aria-label="Papan Mahjong pasangan"></div><div id="mahjong-result" class="result-banner hidden" role="status"></div><p class="game-hint">Ketuk dua ubin. Jika sama, keduanya akan terbuka. Cocokkan semua 12 pasangan untuk menang!</p></div><p class="local-note">Mahjong pasangan · versi puzzle kasual, bukan aturan Mahjong empat pemain.</p>
+      </div>
+    </section>
+    <section id="developer-screen" class="screen developer-screen hidden">
+      <header class="topbar"><button id="developer-back" class="back-btn" type="button">← Dashboard</button><a href="#" class="brand"><span class="brand-icon">K✦</span><span>KYTRICV <b>SOFT</b></span></a><span class="role-pill">👑 DEVELOPER</span></header>
+      <div class="content-wrap developer-wrap">
+        <div class="welcome-row"><div><p class="eyebrow">PRIVATE CONTROL CENTER</p><h2>Developer <span>Panel</span></h2><p class="muted">Halo, Kyy. Atur maintenance dan siapkan game baru dari HP.</p></div><span class="online-pill">CONTROL CENTER</span></div>
+        <div class="notice-card"><b>ℹ️ Informasi panel</b><p>Pengaturan dan statistik di panel ini tersimpan di browser/perangkat ini. Panel ini dapat memeriksa ZIP dan membuka file HTML untuk uji lokal. Karena website menggunakan GitHub Pages statis, unggahan dari panel tidak dapat mengubah website publik otomatis; file final tetap perlu diunggah ke repositori GitHub.</p></div>
+        <div class="developer-grid">
+          <article class="dev-panel-card"><p class="eyebrow">SITE CONTROL</p><h3>🔧 Maintenance</h3><p class="muted">Tampilkan pengumuman maintenance di dashboard pada browser ini.</p><label class="maintenance-switch"><input id="maintenance-toggle" type="checkbox"><span class="switch-track"></span><b id="maintenance-state">OFF · Situs dibuka</b></label><p class="small-muted">Saat aktif, banner maintenance muncul pada halaman di browser ini. Pengaturan tidak mengubah website online untuk pengunjung lain.</p></article>
+          <article class="dev-panel-card"><p class="eyebrow">GAME RELEASE</p><h3>📦 Upload Game ZIP</h3><p class="muted">Pilih ZIP game dari HP untuk memeriksa file. Untuk merilis ke semua pengunjung, unggah file ke repositori GitHub Pages.</p><label class="upload-zone" for="game-zip-input"><span>⬆️</span><b>Pilih file game ZIP</b><small>Format .zip · maksimal 25 MB</small></label><input id="game-zip-input" type="file" accept=".zip,application/zip" hidden><p id="zip-file-info" class="small-muted">Belum ada file dipilih.</p><button id="preview-zip-btn" class="primary-btn full-btn" type="button" disabled>Periksa File</button><div id="zip-preview" class="zip-preview hidden" aria-live="polite"></div></article>
+          <article class="dev-panel-card"><p class="eyebrow">QUICK TEST</p><h3>🕹️ Uji Game HTML</h3><p class="muted">Pilih satu file game HTML untuk membukanya di tab baru dan menguji versi lokal sebelum dirilis.</p><label class="upload-zone" for="game-html-input"><span>▶</span><b>Pilih file game .HTML</b><small>HTML tunggal · maksimal 10 MB · uji lokal</small></label><input id="game-html-input" type="file" accept=".html,.htm,text/html" hidden><p id="game-html-info" class="small-muted">Belum ada file dipilih.</p><button id="preview-html-btn" class="primary-btn full-btn" type="button" disabled>Buka & Uji Game</button><div id="html-preview" class="zip-preview hidden" aria-live="polite"></div></article>
+          <article class="dev-panel-card"><p class="eyebrow">TOOLS RELEASE</p><h3>🧰 Upload Tools ZIP</h3><p class="muted">Pilih paket tools untuk memeriksa file dan menyiapkan tautan tinjauan.</p><label class="upload-zone" for="tools-zip-input"><span>🧰</span><b>Pilih file tools ZIP</b><small>Format .zip · maksimal 25 MB</small></label><input id="tools-zip-input" type="file" accept=".zip,application/zip" hidden><p id="tools-zip-file-info" class="small-muted">Belum ada file dipilih.</p><button id="preview-tools-zip-btn" class="primary-btn full-btn" type="button" disabled>Periksa File</button><div id="tools-zip-preview" class="zip-preview hidden" aria-live="polite"></div></article>
+        </div>
+        <section class="dev-panel-card leaderboard-card"><div class="section-heading"><div><p class="eyebrow">LOCAL ANALYTICS</p><h3>👥 Pengunjung & Top 10 Nama</h3></div><span class="section-caption">Data perangkat ini</span></div><div class="analytics-stats"><div><small>Total login tercatat</small><b id="local-visit-count">0</b></div><div><small>Nama unik tercatat</small><b id="local-user-count">0</b></div></div><p class="small-muted">Data akun dan login yang tersimpan di browser ini saja. Pengunjung dari HP lain tidak akan muncul tanpa database/server bersama.</p><div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead><tr><th>#</th><th>Nama pemain</th><th>Login di perangkat ini</th></tr></thead><tbody id="leaderboard-body"><tr><td colspan="3">Belum ada data.</td></tr></tbody></table></div></section>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+(() => {
+  "use strict";
+  const $ = (selector) => document.querySelector(selector);
+  const loginScreen = $("#login-screen");
+  const dashboardScreen = $("#dashboard-screen");
+  const gameScreen = $("#game-screen");
+  const chessScreen = $("#chess-screen");
+  const mahjongScreen = $("#mahjong-screen");
+  const soundButtons = [...document.querySelectorAll("#sound-toggle, #game-sound-toggle, .shared-sound")];
+  let soundEnabled = true;
+  let audioContext = null;
+  const USERS_KEY = "kytricv_accounts_v1";
+  const CURRENT_USER_KEY = "kytricv_current_user_v1";
+  const VISITS_KEY = "kytricv_local_visits_v3";
+  let authMode = "login";
+  let playerName = "Player";
+  let mode = "bot";
+  let board = Array(9).fill("");
+  let currentPlayer = "X";
+  let gameOver = false;
+  let scores = { X: 0, O: 0, draw: 0 };
+  let toastTimer = null;
+  const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  const cells = [...document.querySelectorAll(".ttt-cell")];
+
+  function getAudioContext() {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return null;
+    if (!audioContext) audioContext = new AudioCtx();
+    return audioContext;
+  }
+
+  // Mobile browsers often keep audio suspended until a real user gesture.
+  async function unlockAudio() {
+    try {
+      const ctx = getAudioContext();
+      if (ctx && ctx.state === "suspended") await ctx.resume();
+    } catch (_) { /* Audio is optional. */ }
+  }
+
+  function playTone(kind = "click") {
+    if (!soundEnabled) return;
+    const presets = {
+      click: [520, 0.07, "sine"], select: [660, 0.10, "triangle"],
+      win: [660, 0.24, "sine"], lose: [240, 0.22, "triangle"],
+      draw: [380, 0.16, "sine"], back: [440, 0.08, "sine"]
+    };
+    const [frequency, duration, type] = presets[kind] || presets.click;
+    unlockAudio().then(() => {
+      if (!soundEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx || ctx.state !== "running") return;
+        const now = ctx.currentTime;
+        const oscillator = ctx.createOscillator();
+        const gain = ctx.createGain();
+        oscillator.type = type;
+        oscillator.frequency.setValueAtTime(frequency, now);
+        if (kind === "win") oscillator.frequency.exponentialRampToValueAtTime(990, now + duration);
+        if (kind === "lose") oscillator.frequency.exponentialRampToValueAtTime(140, now + duration);
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(0.12, now + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+        oscillator.connect(gain);
+        gain.connect(ctx.destination);
+        oscillator.start(now);
+        oscillator.stop(now + duration + 0.025);
+      } catch (_) { /* Game tetap berjalan tanpa suara jika audio tidak didukung. */ }
+    });
+  }
+
+  function updateSoundButtons() {
+    soundButtons.forEach(button => {
+      if (!button) return;
+      button.textContent = soundEnabled ? "🔊" : "🔇";
+      button.setAttribute("aria-label", soundEnabled ? "Matikan suara" : "Aktifkan suara");
+      button.title = soundEnabled ? "Suara aktif" : "Suara mati";
+    });
+  }
+  function toggleSound() { soundEnabled = !soundEnabled; updateSoundButtons(); if (soundEnabled) playTone("click"); }
+
+  // Hotfix: fungsi drawer/analytics yang sebelumnya belum terpasang lengkap.
+  const siteDrawer = document.querySelector("#site-drawer");
+  const drawerOverlay = document.querySelector("#drawer-overlay");
+  function closeDrawer() {
+    if (siteDrawer) { siteDrawer.classList.remove("open"); siteDrawer.setAttribute("aria-hidden", "true"); }
+    if (drawerOverlay) drawerOverlay.classList.remove("show");
+    document.body.classList.remove("drawer-open");
+  }
+  function openDrawer() {
+    if (!siteDrawer) return;
+    siteDrawer.classList.add("open"); siteDrawer.setAttribute("aria-hidden", "false");
+    if (drawerOverlay) drawerOverlay.classList.add("show");
+    document.body.classList.add("drawer-open");
+  }
+  function recordLocalLogin(name) {
+    try {
+      const key = VISITS_KEY;
+      const data = JSON.parse(localStorage.getItem(key) || "[]");
+      data.push({ name: String(name).slice(0, 20), at: Date.now() });
+      localStorage.setItem(key, JSON.stringify(data.slice(-500)));
+      renderLocalAnalytics();
+    } catch (_) {}
+  }
+  function readAccountsSafeForAnalytics() {
+    try { const value = JSON.parse(localStorage.getItem("kytricv_accounts_v1") || "{}"); return value && typeof value === "object" && !Array.isArray(value) ? value : {}; }
+    catch (_) { return {}; }
+  }
+  function renderLocalAnalytics() {
+    try {
+      const data = JSON.parse(localStorage.getItem(VISITS_KEY) || "[]");
+      const accounts = readAccountsSafeForAnalytics();
+      const count = document.querySelector("#local-visit-count");
+      const users = document.querySelector("#local-user-count");
+      const body = document.querySelector("#leaderboard-body");
+      if (count) count.textContent = data.length;
+      const rows = Object.values(accounts).map(account => ({name:account.username, count:Number(account.logins)||0, last:Number(account.lastLoginAt)||Number(account.createdAt)||0}));
+      if (users) users.textContent = rows.length;
+      if (body) {
+        rows.sort((a,b)=>b.count-a.count || b.last-a.last || a.name.localeCompare(b.name));
+        const top = rows.slice(0,10);
+        body.innerHTML = top.length ? top.map((row,i)=>`<tr><td>${i+1}</td><td>${escapeHTML(row.name)}</td><td>${row.count}</td></tr>`).join("") : '<tr><td colspan="3">Belum ada akun terdaftar di browser ini.</td></tr>';
+      }
+    } catch (_) {}
+  }
+  function escapeHTML(value) { return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+  function refreshDeveloperAccess() {
+    const isDeveloper = Boolean(window.kytricvIsDeveloper);
+    const wrap = document.querySelector("#developer-nav-wrap");
+    if (wrap) wrap.classList.toggle("hidden", !isDeveloper);
+    renderLocalAnalytics();
+  }
+  document.querySelector("#menu-open")?.addEventListener("click", openDrawer);
+  document.querySelector("#menu-close")?.addEventListener("click", closeDrawer);
+  drawerOverlay?.addEventListener("click", closeDrawer);
+  document.querySelectorAll("[data-drawer-action]").forEach(button => button.addEventListener("click", () => {
+    const action = button.dataset.drawerAction; closeDrawer();
+    if (action === "home" || action === "games") showScreen(dashboardScreen);
+    else if (action === "developer" && window.kytricvIsDeveloper) showScreen(document.querySelector("#developer-screen"));
+    else if (action === "premium" || action === "quran") showToast("Fitur ini belum tersedia.");
+  }));
+  document.querySelector("#developer-back")?.addEventListener("click", () => showScreen(dashboardScreen));
+  function applyMaintenance(enabled) {
+    const toggle = document.querySelector("#maintenance-toggle");
+    const state = document.querySelector("#maintenance-state");
+    const banner = document.querySelector("#maintenance-banner");
+    if (toggle) toggle.checked = Boolean(enabled);
+    if (state) state.textContent = enabled ? "ON · Maintenance aktif di browser ini" : "OFF · Situs dibuka";
+    if (banner) banner.classList.toggle("hidden", !enabled);
+    try { localStorage.setItem("kytricv_maintenance_local_v1", enabled ? "1" : "0"); } catch (_) {}
+  }
+  document.querySelector("#maintenance-toggle")?.addEventListener("change", event => {
+    applyMaintenance(event.target.checked);
+    showToast(event.target.checked ? "Banner maintenance diaktifkan pada browser ini." : "Banner maintenance dinonaktifkan.");
+  });
+  try { applyMaintenance(localStorage.getItem("kytricv_maintenance_local_v1") === "1"); } catch (_) { applyMaintenance(false); }
+
+  function wireZipUpload(inputId, infoId, buttonId, previewId, label) {
+    const input = document.getElementById(inputId);
+    const info = document.getElementById(infoId);
+    const button = document.getElementById(buttonId);
+    const preview = document.getElementById(previewId);
+    if (!input || !button || !preview) return;
+    input.addEventListener("change", () => {
+      const file = input.files && input.files[0];
+      if (info) info.textContent = file ? `${file.name} · ${(file.size/1024/1024).toFixed(2)} MB` : "Belum ada file dipilih.";
+      button.disabled = !(file && file.name.toLowerCase().endsWith(".zip") && file.size > 0 && file.size <= 25*1024*1024);
+      preview.classList.add("hidden"); preview.textContent = "";
+    });
+    button.addEventListener("click", async () => {
+      const file = input.files && input.files[0];
+      if (!file) return;
+      if (!file.name.toLowerCase().endsWith(".zip") || file.size <= 0 || file.size > 25*1024*1024) {
+        showToast("Pilih file ZIP yang valid dengan ukuran maksimal 25 MB."); return;
+      }
+      try {
+        const header = new Uint8Array(await file.slice(0,4).arrayBuffer());
+        const zipSignature = header.length === 4 && header[0] === 0x50 && header[1] === 0x4b && [0x03,0x05,0x07].includes(header[2]) && [0x04,0x06,0x08].includes(header[3]);
+        preview.classList.remove("hidden");
+        if (!zipSignature) { preview.textContent = `File ${label} tidak dikenali sebagai ZIP yang valid. Coba pilih file ZIP lain.`; showToast("File bukan ZIP yang valid."); return; }
+        const oldUrl = preview.dataset.objectUrl;
+        if (oldUrl) URL.revokeObjectURL(oldUrl);
+        const objectUrl = URL.createObjectURL(file);
+        preview.dataset.objectUrl = objectUrl;
+        preview.innerHTML = `<b>✓ File ZIP berhasil diperiksa</b><div class="upload-check">Nama: ${escapeHTML(file.name)}<br>Ukuran: ${(file.size/1024/1024).toFixed(2)} MB<br>Jenis: ${escapeHTML(label)}<br><span class="muted">File belum dipasang ke website online.</span></div><div class="dev-action-row"><a href="${objectUrl}" download="${escapeHTML(file.name)}">Unduh file yang dipilih ↗</a></div>`;
+        showToast("File ZIP valid dan siap ditinjau.");
+      } catch (_) { preview.classList.remove("hidden"); preview.textContent = "Browser tidak dapat membaca file ini. Coba pilih ulang."; }
+    });
+  }
+  const htmlInput = document.getElementById("game-html-input");
+  const htmlInfo = document.getElementById("game-html-info");
+  const htmlButton = document.getElementById("preview-html-btn");
+  const htmlPreview = document.getElementById("html-preview");
+  let htmlTestUrl = null;
+  htmlInput?.addEventListener("change", () => {
+    const file = htmlInput.files && htmlInput.files[0];
+    if (htmlInfo) htmlInfo.textContent = file ? `${file.name} · ${(file.size/1024/1024).toFixed(2)} MB` : "Belum ada file dipilih.";
+    if (htmlButton) htmlButton.disabled = !(file && /\.html?$/i.test(file.name) && file.size > 0 && file.size <= 10*1024*1024);
+    if (htmlPreview) { htmlPreview.classList.add("hidden"); htmlPreview.textContent = ""; }
+    if (htmlTestUrl) { URL.revokeObjectURL(htmlTestUrl); htmlTestUrl = null; }
+  });
+  htmlButton?.addEventListener("click", () => {
+    const file = htmlInput?.files?.[0];
+    if (!file || !/\.html?$/i.test(file.name) || file.size > 10*1024*1024) { showToast("Pilih file HTML valid maksimal 10 MB."); return; }
+    if (htmlTestUrl) URL.revokeObjectURL(htmlTestUrl);
+    htmlTestUrl = URL.createObjectURL(file);
+    const tab = window.open(htmlTestUrl, "_blank", "noopener");
+    htmlPreview.classList.remove("hidden");
+    htmlPreview.textContent = tab ? `File ${file.name} dibuka untuk pengujian lokal. Ini belum dipublikasikan ke website.` : "Popup diblokir browser. Izinkan popup atau buka ulang tombol ini.";
+    showToast(tab ? "Game HTML dibuka untuk diuji lokal." : "Browser memblokir tab baru.");
+  });
+  wireZipUpload("game-zip-input", "zip-file-info", "preview-zip-btn", "zip-preview", "game");
+  wireZipUpload("tools-zip-input", "tools-zip-file-info", "preview-tools-zip-btn", "tools-zip-preview", "tools");
+
+  function showScreen(screen) {
+    [loginScreen, dashboardScreen, gameScreen, chessScreen, mahjongScreen, toolScreen, $("#developer-screen")].forEach(item => item.classList.add("hidden"));
+    closeDrawer();
+    screen.classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  function showToast(message) {
+    const toast = $("#toast");
+    toast.textContent = message; toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2100);
+  }
+  function enterDashboard() {
+    $("#welcome-name").textContent = playerName;
+    $("#avatar-letter").textContent = (playerName.trim()[0] || "P").toUpperCase();
+    showScreen(dashboardScreen);
+  }
+  function startGame() {
+    playTone("select");
+    showScreen(gameScreen);
+    resetGame();
+  }
+  function setMode(nextMode) {
+    if (mode === nextMode) return;
+    mode = nextMode;
+    $("#mode-bot").classList.toggle("active", mode === "bot");
+    $("#mode-friend").classList.toggle("active", mode === "friend");
+    $("#player-o-label").textContent = mode === "bot" ? "Bot (O)" : "Teman (O)";
+    $("#o-caption").textContent = mode === "bot" ? "OPPONENT" : "PLAYER 2";
+    resetGame();
+    playTone("click");
+  }
+  function resetGame() {
+    board = Array(9).fill(""); currentPlayer = "X"; gameOver = false;
+    cells.forEach(cell => { cell.textContent = ""; cell.disabled = false; cell.classList.remove("mark-o", "winning-cell"); });
+    $("#result-banner").className = "result-banner hidden";
+    $("#result-banner").textContent = "";
+    updateScoreDisplay();
+    updateTurnStatus();
+  }
+  function updateScoreDisplay() {
+    $("#x-score").textContent = scores.X;
+    $("#o-score").textContent = scores.O;
+    $("#score-x").classList.toggle("active-player", !gameOver && currentPlayer === "X");
+    $("#score-o").classList.toggle("active-player", !gameOver && currentPlayer === "O");
+  }
+  function updateTurnStatus() {
+    const status = $("#turn-status");
+    if (gameOver) return;
+    const who = currentPlayer === "X" ? "Giliran lu" : (mode === "bot" ? "Bot lagi mikir" : "Giliran teman");
+    status.innerHTML = `<span class="turn-dot"></span> ${who} <b class="${currentPlayer === "X" ? "x-color" : "o-color"}">${currentPlayer === "X" ? "×" : "○"}</b>`;
+    updateScoreDisplay();
+  }
+  function getWinner() {
+    for (const combo of wins) {
+      if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[1]] === board[combo[2]]) {
+        return { player: board[combo[0]], combo };
+      }
+    }
+    return null;
+  }
+  function endGame(winner, combo = []) {
+    gameOver = true;
+    cells.forEach(cell => cell.disabled = true);
+    combo.forEach(index => cells[index].classList.add("winning-cell"));
+    const banner = $("#result-banner");
+    banner.classList.remove("hidden", "loss", "draw");
+    if (winner === "draw") {
+      scores.draw++; banner.classList.add("draw"); banner.textContent = "Seri! Kalian sama kuat. Coba lagi!";
+      $("#turn-status").innerHTML = '<span class="turn-dot"></span> Pertandingan selesai';
+      playTone("draw");
+    } else {
+      scores[winner]++;
+      const isWin = winner === "X";
+      banner.classList.toggle("loss", !isWin);
+      banner.textContent = isWin ? "Keren! Lu menang! ✦" : (mode === "bot" ? "Bot menang kali ini. Coba lagi!" : "Teman lu menang! Rematch?");
+      $("#turn-status").innerHTML = `<span class="turn-dot"></span> ${isWin ? "Kemenangan lu!" : "Pertandingan selesai"}`;
+      playTone(isWin ? "win" : "lose");
+    }
+    updateScoreDisplay();
+  }
+  function placeMark(index, mark) {
+    if (gameOver || board[index]) return false;
+    board[index] = mark;
+    cells[index].textContent = mark === "X" ? "×" : "○";
+    cells[index].classList.toggle("mark-o", mark === "O");
+    cells[index].disabled = true;
+    playTone("select");
+    const result = getWinner();
+    if (result) { endGame(result.player, result.combo); return true; }
+    if (board.every(Boolean)) { endGame("draw"); return true; }
+    currentPlayer = mark === "X" ? "O" : "X";
+    updateTurnStatus();
+    return true;
+  }
+  function botMove() {
+    if (gameOver || currentPlayer !== "O") return;
+    // Prioritas bot: menang, blokir kemenangan lawan, tengah, sudut, lalu kotak kosong.
+    const findWinningMove = (mark) => {
+      for (let i = 0; i < 9; i++) {
+        if (!board[i]) {
+          board[i] = mark;
+          const winning = Boolean(getWinner());
+          board[i] = "";
+          if (winning) return i;
+        }
+      }
+      return -1;
+    };
+    let move = findWinningMove("O");
+    if (move < 0) move = findWinningMove("X");
+    if (move < 0 && !board[4]) move = 4;
+    if (move < 0) {
+      const corners = [0, 2, 6, 8].filter(i => !board[i]);
+      if (corners.length) move = corners[Math.floor(Math.random() * corners.length)];
+    }
+    if (move < 0) {
+      const empty = board.map((v, i) => v ? -1 : i).filter(i => i >= 0);
+      if (empty.length) move = empty[Math.floor(Math.random() * empty.length)];
+    }
+    if (move >= 0) placeMark(move, "O");
+  }
+  cells.forEach(cell => cell.addEventListener("click", () => {
+    const index = Number(cell.dataset.index);
+    if (gameOver || board[index]) return;
+    // Friend mode allows both X and O turns on the same device. Bot mode only accepts X from the player.
+    if (mode === "bot" && currentPlayer !== "X") return;
+    const mark = currentPlayer;
+    if (!placeMark(index, mark)) return;
+    if (mode === "bot" && !gameOver && currentPlayer === "O") {
+      cells.forEach(item => item.disabled = true);
+      setTimeout(() => {
+        if (!gameOver) {
+          botMove();
+          if (!gameOver) cells.forEach(item => item.disabled = Boolean(board[Number(item.dataset.index)]));
+        }
+      }, 350);
+    }
+  }));
+
+  function readAccounts() {
+    try { const value = JSON.parse(localStorage.getItem(USERS_KEY) || "{}"); return value && typeof value === "object" && !Array.isArray(value) ? value : {}; }
+    catch (_) { return {}; }
+  }
+  function saveAccounts(accounts) { localStorage.setItem(USERS_KEY, JSON.stringify(accounts)); }
+  async function passwordDigest(password) {
+    // Hashing avoids storing a plain-text password, but this client-only account system is not suitable for sensitive accounts.
+    if (window.crypto && crypto.subtle && window.TextEncoder) {
+      const bytes = new TextEncoder().encode(password);
+      const digest = await crypto.subtle.digest("SHA-256", bytes);
+      return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2,"0")).join("");
+    }
+    // Compatibility fallback for browsers without SubtleCrypto; still never stores the raw password.
+    let h = 2166136261;
+    for (let i=0;i<password.length;i++) { h ^= password.charCodeAt(i); h = Math.imul(h,16777619); }
+    return "fallback-" + (h >>> 0).toString(16);
+  }
+  // Dedicated developer account for this local/static release package. Static-only auth is not server-grade security.
+  (function seedDedicatedDeveloperAccount(){
+    try {
+      const accounts = readAccounts();
+      accounts.kyy = { username: "kyy", passwordHash: "06b18d3a9763e78f1c7e2710dba7bbf4123d1974509902696ddca22a0e7610e4", createdAt: Date.now(), role: "developer", logins: 0 };
+      saveAccounts(accounts);
+    } catch (error) { console.warn("Developer account setup unavailable", error); }
+  })();
+  function setAuthMode(modeName) {
+    authMode = modeName;
+    const loginTab = $("#auth-login-tab"), registerTab = $("#auth-register-tab");
+    loginTab.classList.toggle("active", authMode === "login");
+    registerTab.classList.toggle("active", authMode === "register");
+    loginTab.setAttribute("aria-selected", String(authMode === "login"));
+    registerTab.setAttribute("aria-selected", String(authMode === "register"));
+    $("#auth-submit").innerHTML = authMode === "login" ? 'Masuk ke arena <span>↗</span>' : 'Buat akun <span>↗</span>';
+    $("#player-password").setAttribute("autocomplete", authMode === "login" ? "current-password" : "new-password");
+    $("#player-password").setAttribute("minlength", authMode === "login" ? "6" : "8");
+    $("#auth-message").textContent = authMode === "register" ? "Buat username 3–20 karakter dan password minimal 8 karakter." : "Masuk dengan akun yang sudah terdaftar di browser ini.";
+  }
+  $("#auth-login-tab").addEventListener("click", () => setAuthMode("login"));
+  $("#auth-register-tab").addEventListener("click", () => setAuthMode("register"));
+  $("#login-form").addEventListener("submit", async event => {
+    event.preventDefault();
+    const rawName = $("#player-name").value.trim();
+    const password = $("#player-password").value;
+    const normalized = rawName.toLowerCase();
+    const message = $("#auth-message");
+    if (!/^[a-zA-Z0-9_]{3,20}$/.test(rawName)) { message.textContent = "Username harus 3–20 karakter: huruf, angka, atau underscore."; return; }
+    if (authMode === "register" && password.length < 8) { message.textContent = "Password untuk akun baru minimal 8 karakter."; return; }
+    if (authMode === "login" && password.length < 6) { message.textContent = "Password minimal 6 karakter."; return; }
+    try {
+      const accounts = readAccounts();
+      if (authMode === "register") {
+        if (normalized === "kyy" || normalized === "developer_kyy") { message.textContent = "Username ini khusus akun Developer KYTRICVSOFT."; return; }
+        if (accounts[normalized]) { message.textContent = "Username sudah dipakai di browser ini. Pilih username lain."; return; }
+        accounts[normalized] = { username: rawName.slice(0,20), passwordHash: await passwordDigest(password), createdAt: Date.now(), role: "player", logins: 0 };
+        saveAccounts(accounts);
+        setAuthMode("login");
+        $("#player-name").value = rawName;
+        $("#player-password").value = "";
+        message.textContent = "Akun berhasil dibuat di browser ini. Silakan masuk dengan password tadi.";
+        showToast("Akun berhasil dibuat.");
+        return;
+      }
+      const account = accounts[normalized];
+      const digest = await passwordDigest(password);
+      if (!account || account.passwordHash !== digest) { message.textContent = "Username atau password tidak cocok. Jika belum punya akun, pilih Daftar."; return; }
+      playerName = account.username;
+      account.logins = (Number(account.logins) || 0) + 1;
+      account.lastLoginAt = Date.now();
+      accounts[normalized] = account;
+      saveAccounts(accounts);
+      window.kytricvIsDeveloper = account.role === "developer";
+      localStorage.setItem(CURRENT_USER_KEY, normalized);
+      recordLocalLogin(playerName);
+      playTone("click");
+      enterDashboard();
+      refreshDeveloperAccess();
+    } catch (error) {
+      console.error("Auth error", error);
+      message.textContent = "Penyimpanan browser tidak tersedia. Coba buka website lewat browser biasa.";
+    }
+  });
+  $("#hero-play").addEventListener("click", startGame);
+  $("#card-tictactoe").addEventListener("click", startGame);
+  $("#back-dashboard").addEventListener("click", () => { playTone("back"); showScreen(dashboardScreen); });
+  $("#restart-btn").addEventListener("click", () => { playTone("click"); resetGame(); });
+  $("#mode-bot").addEventListener("click", () => setMode("bot"));
+  $("#mode-friend").addEventListener("click", () => setMode("friend"));
+  soundButtons.forEach(button => button.addEventListener("click", toggleSound));
+  $("#logout-btn").addEventListener("click", () => {
+    playTone("back");
+    $("#player-name").value = "";
+    $("#player-password").value = "";
+    $("#auth-message").textContent = "";
+    try { localStorage.removeItem(CURRENT_USER_KEY); } catch (_) {}
+    scores = { X: 0, O: 0, draw: 0 };
+    window.kytricvIsDeveloper = false; refreshDeveloperAccess();
+    setAuthMode("login");
+    showScreen(loginScreen);
+    showToast("Lu sudah keluar dari akun.");
+  });
+  // CHESS BETA: legal basic moves, check/checkmate, stalemate, captures and queen promotion.
+  const chessBoardEl = $("#chess-board");
+  const chessStatus = $("#chess-status");
+  const chessResult = $("#chess-result");
+  const chessSymbols = { w:{K:"♔",Q:"♕",R:"♖",B:"♗",N:"♘",P:"♙"}, b:{K:"♚",Q:"♛",R:"♜",B:"♝",N:"♞",P:"♟"} };
+  let chessBoard = [], chessTurn = "w", chessSelected = null, chessLegalTargets = [], chessOver = false;
+  const inBounds = (r,c) => r>=0 && r<8 && c>=0 && c<8;
+  function initialChessBoard(){
+    const rows = ["RNBQKBNR","PPPPPPPP","........","........","........","........","pppppppp","rnbqkbnr"];
+    chessBoard = rows.map((row,r)=>[...row].map((ch,c)=>ch==='.'?null:{c:r<2?'b':'w',t:ch.toUpperCase(),m:false}));
+    chessTurn='w'; chessSelected=null; chessLegalTargets=[]; chessOver=false;
+    chessResult.className='result-banner hidden'; chessResult.textContent=''; renderChess(); updateChessStatus();
+  }
+  function findKing(color){ for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chessBoard[r][c]?.c===color&&chessBoard[r][c]?.t==='K') return [r,c]; return null; }
+  function attackedBy(r,c,color){
+    // Pawn attacks
+    const pawnDir=color==='w'?-1:1;
+    for(const dc of [-1,1]){const rr=r-pawnDir,cc=c-dc;if(inBounds(rr,cc)&&chessBoard[rr][cc]?.c===color&&chessBoard[rr][cc]?.t==='P')return true;}
+    for(const [dr,dc] of [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]){const rr=r+dr,cc=c+dc;if(inBounds(rr,cc)&&chessBoard[rr][cc]?.c===color&&chessBoard[rr][cc]?.t==='N')return true;}
+    for(const [dr,dc] of [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]){
+      let rr=r+dr,cc=c+dc,dist=1;while(inBounds(rr,cc)){const p=chessBoard[rr][cc];if(p){if(p.c===color&&(p.t==='Q'||(p.t==='R'&&(dr===0||dc===0))||(p.t==='B'&&dr!==0&&dc!==0)||(p.t==='K'&&dist===1)))return true;break;}rr+=dr;cc+=dc;dist++;}
+    } return false;
+  }
+  function inCheck(color){const k=findKing(color);return k?attackedBy(k[0],k[1],color==='w'?'b':'w'):false;}
+  function pseudoMoves(r,c){
+    const p=chessBoard[r][c];if(!p)return[];const out=[],add=(rr,cc)=>{if(!inBounds(rr,cc))return false;const q=chessBoard[rr][cc];if(!q){out.push([rr,cc]);return true;}if(q.c!==p.c)out.push([rr,cc]);return false;};
+    if(p.t==='P'){const d=p.c==='w'?-1:1,start=p.c==='w'?6:1;if(inBounds(r+d,c)&&!chessBoard[r+d][c]){out.push([r+d,c]);if(r===start&&!chessBoard[r+2*d][c])out.push([r+2*d,c]);}for(const dc of [-1,1]){const rr=r+d,cc=c+dc;if(inBounds(rr,cc)&&chessBoard[rr][cc]&&chessBoard[rr][cc].c!==p.c)out.push([rr,cc]);}}
+    else if(p.t==='N'){for(const [dr,dc] of [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]])add(r+dr,c+dc);}
+    else {let dirs=[];if(p.t==='B'||p.t==='Q')dirs.push([1,1],[1,-1],[-1,1],[-1,-1]);if(p.t==='R'||p.t==='Q')dirs.push([1,0],[-1,0],[0,1],[0,-1]);if(p.t==='K')dirs=dirs.filter(()=>false);if(p.t==='K'){for(const [dr,dc] of [[1,1],[1,-1],[-1,1],[-1,-1],[1,0],[-1,0],[0,1],[0,-1]])add(r+dr,c+dc);}else for(const [dr,dc] of dirs){let rr=r+dr,cc=c+dc;while(add(rr,cc)){rr+=dr;cc+=dc;}}}
+    return out;
+  }
+  function legalMoves(r,c){const p=chessBoard[r][c];if(!p)return[];return pseudoMoves(r,c).filter(([rr,cc])=>{const captured=chessBoard[rr][cc];chessBoard[rr][cc]=p;chessBoard[r][c]=null;const safe=!inCheck(p.c);chessBoard[r][c]=p;chessBoard[rr][cc]=captured;return safe;});}
+  function allLegalMoves(color){const out=[];for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(chessBoard[r][c]?.c===color)for(const to of legalMoves(r,c))out.push({from:[r,c],to});return out;}
+  function renderChess(){
+    chessBoardEl.innerHTML='';const checked=findKing(chessTurn);const kingChecked=checked&&inCheck(chessTurn);
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++){const sq=document.createElement('button');sq.type='button';sq.className='chess-square '+((r+c)%2?'dark':'light');sq.setAttribute('role','gridcell');sq.setAttribute('aria-label',`Baris ${r+1}, kolom ${c+1}${chessBoard[r][c]?' '+chessBoard[r][c].t:''}`);const piece=chessBoard[r][c];if(piece){sq.textContent=chessSymbols[piece.c][piece.t];sq.classList.add(piece.c==='w'?'white-piece':'black-piece');}if(chessSelected&&chessSelected[0]===r&&chessSelected[1]===c)sq.classList.add('selected');if(chessLegalTargets.some(([rr,cc])=>rr===r&&cc===c))sq.classList.add(piece?'capture-target':'legal-target');if(kingChecked&&checked[0]===r&&checked[1]===c)sq.classList.add('king-check');sq.addEventListener('click',()=>clickChessSquare(r,c));chessBoardEl.appendChild(sq);}
+  }
+  function updateChessStatus(){if(chessOver)return;const checked=inCheck(chessTurn);chessStatus.textContent=(chessTurn==='w'?'Giliran Putih':'Giliran Hitam')+(checked?' — SKAK!':'');}
+  function clickChessSquare(r,c){if(chessOver)return;const p=chessBoard[r][c];if(chessSelected&&chessLegalTargets.some(([rr,cc])=>rr===r&&cc===c)){const [fr,fc]=chessSelected;const moving=chessBoard[fr][fc];chessBoard[r][c]=moving;chessBoard[fr][fc]=null;if(moving.t==='P'&&(r===0||r===7))moving.t='Q';chessTurn=chessTurn==='w'?'b':'w';chessSelected=null;chessLegalTargets=[];playTone('select');renderChess();const moves=allLegalMoves(chessTurn);if(moves.length===0){chessOver=true;chessResult.classList.remove('hidden','loss','draw');if(inCheck(chessTurn)){chessResult.textContent=`SKAKMAT! ${chessTurn==='w'?'Hitam':'Putih'} menang!`;playTone('win');}else{chessResult.classList.add('draw');chessResult.textContent='Remis — tidak ada langkah legal.';playTone('draw');}chessStatus.textContent='Pertandingan selesai';}else updateChessStatus();return;}
+    if(p&&p.c===chessTurn){chessSelected=[r,c];chessLegalTargets=legalMoves(r,c);playTone('click');renderChess();}else{chessSelected=null;chessLegalTargets=[];renderChess();}}
+  $('#card-chess').addEventListener('click',()=>{showScreen(chessScreen);initialChessBoard();playTone('select');});
+  $('#back-chess').addEventListener('click',()=>{showScreen(dashboardScreen);playTone('back');});
+  $('#chess-reset').addEventListener('click',()=>{initialChessBoard();playTone('click');});
+
+  // Mahjong pair-match puzzle (12 pairs).
+  const mahjongSymbols=['🀇','🀈','🀉','🀊','🀋','🀌','🀍','🀎','🀏','🀄','🀅','🀆'];
+  let mahjongDeck=[],mahjongOpen=[],mahjongMatched=new Set(),mahjongMoveCount=0,mahjongLock=false,mahjongTimer=null,mahjongStarted=0;
+  function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  function updateMahjongStats(){$('#mahjong-moves').textContent=mahjongMoveCount;$('#mahjong-pairs').textContent=`${mahjongMatched.size/2} / 12`;}
+  function startMahjong(){clearTimeout(mahjongTimer);mahjongDeck=shuffle([...mahjongSymbols,...mahjongSymbols]);mahjongOpen=[];mahjongMatched=new Set();mahjongMoveCount=0;mahjongLock=false;mahjongStarted=Date.now();$('#mahjong-result').className='result-banner hidden';$('#mahjong-result').textContent='';const boardEl=$('#mahjong-board');boardEl.innerHTML='';mahjongDeck.forEach((symbol,index)=>{const tile=document.createElement('button');tile.type='button';tile.className='mahjong-tile';tile.textContent='?';tile.setAttribute('aria-label',`Ubin ${index+1}, tertutup`);tile.addEventListener('click',()=>flipMahjong(index));boardEl.appendChild(tile);});updateMahjongStats();}
+  function flipMahjong(index){if(mahjongLock||mahjongMatched.has(index)||mahjongOpen.includes(index))return;const tile=$('#mahjong-board').children[index];tile.classList.add('revealed');tile.textContent=mahjongDeck[index];tile.setAttribute('aria-label',`Ubin ${index+1}, ${mahjongDeck[index]}`);mahjongOpen.push(index);playTone('select');if(mahjongOpen.length===2){mahjongMoveCount++;updateMahjongStats();const [a,b]=mahjongOpen;if(mahjongDeck[a]===mahjongDeck[b]){mahjongMatched.add(a);mahjongMatched.add(b);$('#mahjong-board').children[a].classList.add('matched');$('#mahjong-board').children[b].classList.add('matched');mahjongOpen=[];updateMahjongStats();playTone('win');if(mahjongMatched.size===mahjongDeck.length){const seconds=Math.round((Date.now()-mahjongStarted)/1000);const result=$('#mahjong-result');result.className='result-banner';result.textContent=`Keren! Semua pasangan ditemukan dalam ${mahjongMoveCount} langkah (${seconds} detik).`;playTone('win');}}else{mahjongLock=true;mahjongTimer=setTimeout(()=>{[a,b].forEach(i=>{const el=$('#mahjong-board').children[i];el.classList.remove('revealed');el.textContent='?';el.setAttribute('aria-label',`Ubin ${i+1}, tertutup`);});mahjongOpen=[];mahjongLock=false;},750);}}}
+  $('#card-mahjong').addEventListener('click',()=>{showScreen(mahjongScreen);startMahjong();playTone('select');});
+  $('#back-mahjong').addEventListener('click',()=>{clearTimeout(mahjongTimer);showScreen(dashboardScreen);playTone('back');});
+  $('#mahjong-reset').addEventListener('click',()=>{startMahjong();playTone('click');});
+  document.querySelectorAll('.shared-sound').forEach(button=>button.addEventListener('click',toggleSound));
+
+  // Siapkan audio pada interaksi pertama agar lebih kompatibel dengan browser HP.
+  document.addEventListener("pointerdown", unlockAudio, { once: true });
+  document.addEventListener("keydown", unlockAudio, { once: true });
+
+  // Social Downloader + AM Finder: frontend prototype, no false claim of automatic scraping.
+  const toolScreen = $('#tool-screen');
+  let chosenPlatform = 'TikTok';
+  function openTool(which){showScreen(toolScreen);$('#downloader-panel').classList.toggle('hidden',which!=='downloader');$('#amfinder-panel').classList.toggle('hidden',which!=='amfinder');$('#tool-title').innerHTML=which==='downloader'?'Social <span>Downloader</span>':'AM <span>Finder</span>';$('#tool-subtitle').textContent=which==='downloader'?'Pilih platform dan periksa link konten.':'Cari URL preset dari teks caption dan komentar.';}
+  $('#open-downloader').addEventListener('click',()=>openTool('downloader'));
+  $('#open-amfinder').addEventListener('click',()=>openTool('amfinder'));
+  $('#back-tools').addEventListener('click',()=>showScreen(dashboardScreen));
+  $('#download-platforms').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{chosenPlatform=btn.dataset.platform;$('#download-platforms').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b===btn));}));
+  $('#check-download').addEventListener('click',()=>{const raw=$('#download-url').value.trim();let u;try{u=new URL(raw);}catch(e){showToast('Masukkan URL yang valid dulu.');return;}if(!['http:','https:'].includes(u.protocol)){showToast('URL harus memakai HTTPS atau HTTP.');return;}const result=$('#download-result');result.classList.remove('hidden');result.innerHTML='<b>Link '+escapeHTML(chosenPlatform)+' valid secara format.</b><p>Opsi kualitas: '+escapeHTML($('#download-quality').value)+'. File belum diunduh; tautan ini hanya membuka halaman sumber.</p><a href="'+escapeHTML(u.href)+'" target="_blank" rel="noopener noreferrer">Buka konten sumber ↗</a>';});
+  $('#find-am-links').addEventListener('click',()=>{const video=$('#am-tiktok-url').value.trim();if(video){try{const u=new URL(video);if(!['http:','https:'].includes(u.protocol))throw 0;}catch(e){showToast('Link TikTok belum valid.');return;}}const textInput=$('#am-caption').value+'\n'+$('#am-comments').value;const urls=[...new Set((textInput.match(/https?:\/\/[^\s<>"']+/g)||[]).map(x=>x.replace(/[),.!?]+$/,'')))];const result=$('#am-result');result.classList.remove('hidden');if(!urls.length){result.innerHTML='<b>Belum ada URL preset ditemukan.</b><p>Pembacaan caption/komentar langsung dari TikTok belum tersedia. Tempel teks yang berisi link di kolom atas, lalu coba lagi.</p>';return;}result.innerHTML='<b>Ditemukan '+urls.length+' URL dari teks yang ditempel:</b>'+urls.map((u,i)=>'<div><small>Link '+(i+1)+'</small><a href="'+escapeHTML(u)+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(u)+'</a><button type="button" class="restart-btn copy-am-link" data-url="'+escapeHTML(u)+'">Salin link</button></div>').join('');result.querySelectorAll('.copy-am-link').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.url);showToast('Link disalin!');}catch(e){showToast('Salin link dari teks hasil secara manual.');}}));});
+
+
+  // UPDATE 5: favorites, search, theme, history and local tools/games.
+  const getList=(key)=>{try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}};
+  const setList=(key,val)=>localStorage.setItem(key,JSON.stringify(val));
+  let activity=getList('kytr_activity'),favorites=getList('kytr_favs');
+  function recordActivity(name){activity.unshift({name,at:new Date().toLocaleString('id-ID')});activity=activity.slice(0,30);setList('kytr_activity',activity)}
+  function openGeneric(title,html){showScreen(toolScreen);$('#downloader-panel').classList.add('hidden');$('#amfinder-panel').classList.add('hidden');$('#generic-tool-panel').classList.remove('hidden');$('#tool-title').textContent=title;$('#tool-subtitle').textContent='Tools KYTRICVSOFT';$('#generic-tool-panel').innerHTML=html;recordActivity(title)}
+  // Ensure old tools hide the generic panel.
+  const oldOpenTool=openTool; openTool=function(which){$('#generic-tool-panel').classList.add('hidden');oldOpenTool(which);recordActivity(which==='downloader'?'Social Downloader':'AM Finder')};
+  $('#back-tools').addEventListener('click',()=>$('#generic-tool-panel').classList.add('hidden'));
+  $('#theme-toggle').addEventListener('click',()=>{document.body.classList.toggle('light-mode');localStorage.setItem('kytr_theme',document.body.classList.contains('light-mode')?'light':'dark')});
+  if(localStorage.getItem('kytr_theme')==='light')document.body.classList.add('light-mode');
+  $('#catalog-search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.catalog-section .game-card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'':'none')});
+  function refreshFavs(){document.querySelectorAll('[data-fav]').forEach(b=>{const n=b.dataset.fav;b.textContent=favorites.includes(n)?'★':'☆';b.style.color=favorites.includes(n)?'var(--pink)':'var(--cyan)'})}
+  document.querySelectorAll('[data-fav]').forEach(b=>b.addEventListener('click',()=>{const n=b.dataset.fav;favorites=favorites.includes(n)?favorites.filter(x=>x!==n):[...favorites,n];setList('kytr_favs',favorites);refreshFavs();showToast(favorites.includes(n)?'Ditambahkan ke favorit':'Dihapus dari favorit')}));refreshFavs();
+  function showActivity(which){const p=$('#activity-panel');p.classList.remove('hidden');const rows=which==='favorites'?favorites.map(n=>({name:n,at:'Favorit'})):activity;p.innerHTML='<b>'+(which==='favorites'?'⭐ Favorit':'🕘 Riwayat penggunaan')+'</b>'+ (rows.length?rows.map(x=>'<p>'+escapeHTML(x.name)+' <small class="small-muted">'+escapeHTML(x.at||'')+'</small></p>').join(''):'<p class="small-muted">Belum ada data.</p>')}
+  $('#show-favorites').addEventListener('click',()=>showActivity('favorites'));$('#show-history').addEventListener('click',()=>showActivity('history'));
+  function makeButton(label,fn){const b=document.createElement('button');b.className='primary-btn';b.textContent=label;b.onclick=fn;return b}
+  document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>{const type=b.dataset.tool;
+    if(type==='calculator'){openGeneric('Kalkulator','<label>Ekspresi matematika</label><input id="calc-expr" inputmode="decimal" placeholder="Contoh: (12+8)*3"><button id="calc-go" class="primary-btn full-btn">Hitung</button><div id="calc-out" class="tool-result">Hasil muncul di sini.</div><p class="small-muted">Mendukung angka, + − × ÷, kurung, dan desimal. Jangan masukkan kode.</p>');$('#calc-go').onclick=()=>{const ex=$('#calc-expr').value.trim();if(!/^[0-9+\-*/().%\s]+$/.test(ex)||!ex){$('#calc-out').textContent='Ekspresi tidak valid.';return}try{const n=Function('"use strict";return ('+ex+')')();$('#calc-out').textContent=Number.isFinite(n)?String(n):'Hasil tidak valid'}catch(e){$('#calc-out').textContent='Ekspresi tidak valid'}};
+    }else if(type==='notes'){openGeneric('Catatan','<label>Catatan (tersimpan di perangkat ini)</label><textarea id="notes-text" placeholder="Tulis catatan lu..." style="min-height:180px"></textarea><button id="notes-save" class="primary-btn full-btn">Simpan Catatan</button><p id="notes-status" class="small-muted"></p>');$('#notes-text').value=localStorage.getItem('kytr_notes')||'';$('#notes-save').onclick=()=>{localStorage.setItem('kytr_notes',$('#notes-text').value);$('#notes-status').textContent='Tersimpan di perangkat ini.';showToast('Catatan tersimpan')};
+    }else if(type==='password'){openGeneric('Password Generator','<label>Panjang password</label><input id="pass-len" type="number" min="8" max="64" value="16"><button id="pass-go" class="primary-btn full-btn">Buat Password</button><div id="pass-out" class="tool-result"></div><button id="pass-copy" class="restart-btn">Salin</button>');$('#pass-go').onclick=()=>{let n=Math.max(8,Math.min(64,Number($('#pass-len').value)||16)),chars='abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789!@#$%';let out='';const bytes=new Uint32Array(n);crypto.getRandomValues(bytes);for(let x of bytes)out+=chars[x%chars.length];$('#pass-out').textContent=out};$('#pass-go').click();$('#pass-copy').onclick=()=>navigator.clipboard?.writeText($('#pass-out').textContent).then(()=>showToast('Password disalin')).catch(()=>showToast('Salin manual'));
+    }else if(type==='picker'){openGeneric('Random Picker','<label>Daftar nama (pisahkan dengan koma atau baris baru)</label><textarea id="pick-list" placeholder="Kyy, Raka, Dimas"></textarea><button id="pick-go" class="primary-btn full-btn">Pilih Acak</button><div id="pick-out" class="tool-result">Siapa yang terpilih?</div>');$('#pick-go').onclick=()=>{const a=$('#pick-list').value.split(/[\n,]+/).map(x=>x.trim()).filter(Boolean);$('#pick-out').textContent=a.length?a[Math.floor(Math.random()*a.length)]:'Masukkan setidaknya satu nama.'};
+    }else if(type==='timer'){openGeneric('Timer & Stopwatch','<label>Timer (detik)</label><input id="timer-secs" type="number" min="1" value="60"><div id="timer-out" class="tool-result">00:00</div><div class="field-row"><button id="timer-start" class="primary-btn">Mulai timer</button><button id="timer-stop" class="restart-btn">Reset</button><button id="sw-start" class="restart-btn">Stopwatch start/stop</button></div><div id="sw-out" class="tool-result">Stopwatch: 0.0 detik</div>');let interval=null,sw=null,swAt=0,swElapsed=0;$('#timer-start').onclick=()=>{clearInterval(interval);let left=Math.max(1,Number($('#timer-secs').value)||1);const paint=()=>$('#timer-out').textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');paint();interval=setInterval(()=>{left--;paint();if(left<=0){clearInterval(interval);$('#timer-out').textContent='WAKTU HABIS!';showToast('Timer selesai')}} ,1000)};$('#timer-stop').onclick=()=>{clearInterval(interval);$('#timer-out').textContent='00:00'};$('#sw-start').onclick=()=>{if(sw){clearInterval(sw);sw=null;swElapsed+=Date.now()-swAt}else{swAt=Date.now();sw=setInterval(()=>$('#sw-out').textContent='Stopwatch: '+((swElapsed+Date.now()-swAt)/1000).toFixed(1)+' detik',100)}};
+    }else if(type==='qr'){openGeneric('QR Generator','<label>URL atau teks</label><input id="qr-text" placeholder="https://..."><button id="qr-go" class="primary-btn full-btn">Buat QR</button><div id="qr-out" class="tool-result"></div><p class="small-muted">Pembuatan QR menggunakan layanan eksternal dan memerlukan internet. Jangan masukkan informasi rahasia.</p>');$('#qr-go').onclick=()=>{const v=$('#qr-text').value.trim();if(!v){showToast('Isi teks atau URL dulu');return}$('#qr-out').innerHTML='<img alt="QR code" style="width:min(240px,100%);background:white;padding:8px;border-radius:12px" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data='+encodeURIComponent(v)+'"><a target="_blank" rel="noopener noreferrer" href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&data='+encodeURIComponent(v)+'">Buka / simpan QR ukuran besar</a>'};}
+  }));
+  document.querySelectorAll('[data-extra]').forEach(b=>b.addEventListener('click',()=>{const type=b.dataset.extra;
+    if(type==='rps'){openGeneric('Suit vs Bot','<p>Pilih langkah lu:</p><div class="field-row"><button class="restart-btn" data-rps="Batu">🪨 Batu</button><button class="restart-btn" data-rps="Gunting">✂️ Gunting</button><button class="restart-btn" data-rps="Kertas">📄 Kertas</button></div><div id="rps-out" class="tool-result">Siap duel?</div>');document.querySelectorAll('[data-rps]').forEach(x=>x.onclick=()=>{const a=x.dataset.rps,bot=['Batu','Gunting','Kertas'][Math.floor(Math.random()*3)];const win=a===bot?'Seri!':(a==='Batu'&&bot==='Gunting'||a==='Gunting'&&bot==='Kertas'||a==='Kertas'&&bot==='Batu')?'Lu menang!':'Bot menang!';$('#rps-out').textContent=`Lu: ${a} · Bot: ${bot} — ${win}`});
+    }else if(type==='memory'){openGeneric('Memory Match','<p>Cari 8 pasangan kartu yang sama.</p><div id="memory-board" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px"></div><p id="memory-status" class="tool-result">Pasangan: 0/8</p><button id="memory-reset" class="restart-btn">Acak ulang</button>');const init=()=>{const sy= ['🍉','🍋','🍇','🍒','🥝','🍍','🍓','🥥'];const deck=sy.concat(sy).sort(()=>Math.random()-.5);let open=[],done=new Set(),lock=false;const board=$('#memory-board');board.innerHTML='';deck.forEach((s,i)=>{const x=document.createElement('button');x.className='restart-btn';x.style.cssText='min-height:56px;font-size:24px';x.textContent='?';x.onclick=()=>{if(lock||done.has(i)||open.includes(i))return;x.textContent=s;open.push(i);if(open.length===2){lock=true;const [a,c]=open;if(deck[a]===deck[c]){done.add(a);done.add(c);open=[];lock=false;$('#memory-status').textContent=`Pasangan: ${done.size/2}/8`;if(done.size===16)$('#memory-status').textContent='Menang! Semua pasangan ditemukan.'}else setTimeout(()=>{[a,c].forEach(k=>board.children[k].textContent='?');open=[];lock=false},650)}};board.appendChild(x)})};init();$('#memory-reset').onclick=init;
+    }else if(type==='snake'){openGeneric('Snake Mini','<p>Gunakan tombol panah di bawah untuk menggerakkan ular. Makan buah untuk skor.</p><canvas id="snake-canvas" width="300" height="300" style="width:min(100%,300px);display:block;margin:auto;background:#08101e;border-radius:12px"></canvas><div class="field-row" style="justify-content:center"><button class="restart-btn" data-dir="up">⬆️</button><button class="restart-btn" data-dir="left">⬅️</button><button class="restart-btn" data-dir="down">⬇️</button><button class="restart-btn" data-dir="right">➡️</button></div><p id="snake-score" class="tool-result">Skor: 0</p><button id="snake-reset" class="restart-btn">Mulai ulang</button>');let tick;const start=()=>{clearInterval(tick);const c=$('#snake-canvas'),ctx=c.getContext('2d');let snake=[{x:5,y:5},{x:4,y:5},{x:3,y:5}],dir={x:1,y:0},food={x:9,y:8},score=0,dead=false;document.querySelectorAll('[data-dir]').forEach(z=>z.onclick=()=>{const d=z.dataset.dir;const nd={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}}[d];if(nd.x!==-dir.x||nd.y!==-dir.y)dir=nd});tick=setInterval(()=>{if(dead)return;const h={x:snake[0].x+dir.x,y:snake[0].y+dir.y};if(h.x<0||h.x>=15||h.y<0||h.y>=15||snake.some(p=>p.x===h.x&&p.y===h.y)){dead=true;$('#snake-score').textContent='Game over! Skor: '+score;return}snake.unshift(h);if(h.x===food.x&&h.y===food.y){score++;food={x:Math.floor(Math.random()*15),y:Math.floor(Math.random()*15)};$('#snake-score').textContent='Skor: '+score}else snake.pop();ctx.clearRect(0,0,300,300);ctx.fillStyle='#69f0dc';snake.forEach(p=>ctx.fillRect(p.x*20+1,p.y*20+1,18,18));ctx.fillStyle='#ff78c8';ctx.fillRect(food.x*20+2,food.y*20+2,16,16)},180)};start();$('#snake-reset').onclick=start;
+    }else if(type==='2048'){openGeneric('2048 Mini','<p>Gabungkan angka dengan tombol arah keyboard, atau tombol di bawah.</p><div id="g2048" style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px"></div><div class="field-row"><button class="restart-btn" data-move="ArrowLeft">⬅️</button><button class="restart-btn" data-move="ArrowUp">⬆️</button><button class="restart-btn" data-move="ArrowDown">⬇️</button><button class="restart-btn" data-move="ArrowRight">➡️</button></div><button id="g2048-reset" class="restart-btn">Reset</button><p id="g2048-status" class="tool-result">Skor: 0</p>');let board,score;const spawn=()=>{const e=board.map((v,i)=>v===0?i:-1).filter(i=>i>=0);if(e.length)board[e[Math.floor(Math.random()*e.length)]]=Math.random()<.9?2:4};const draw=()=>{$('#g2048').innerHTML=board.map(v=>`<div style="min-height:55px;border-radius:8px;display:grid;place-items:center;background:${v?'#263b58':'#11182b'};font-size:20px;font-weight:900">${v||''}</div>`).join('');$('#g2048-status').textContent='Skor: '+score};const reset=()=>{board=Array(16).fill(0);score=0;spawn();spawn();draw()};const move=key=>{let changed=false;for(let line=0;line<4;line++){let ids=[];for(let j=0;j<4;j++)ids.push(key==='ArrowLeft'?line*4+j:key==='ArrowRight'?line*4+3-j:key==='ArrowUp'?j*4+line:(3-j)*4+line);let a=ids.map(i=>board[i]).filter(Boolean),out=[];for(let k=0;k<a.length;k++){if(a[k]===a[k+1]){out.push(a[k]*2);score+=a[k]*2;k++}else out.push(a[k])}while(out.length<4)out.push(0);ids.forEach((id,j)=>{if(board[id]!==out[j])changed=true;board[id]=out[j]})}if(changed)spawn();draw()};reset();document.querySelectorAll('[data-move]').forEach(x=>x.onclick=()=>move(x.dataset.move));$('#g2048-reset').onclick=reset;document.onkeydown=e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)&&!$('#generic-tool-panel').classList.contains('hidden')){e.preventDefault();move(e.key)}};
+    }
+  }));
+
+  // Status Coming Soon hanya placeholder dan belum bisa dimainkan.
+  updateSoundButtons();
+  renderLocalAnalytics();
+  try { setAuthMode("login"); renderLocalAnalytics(); showScreen(loginScreen); } catch (error) { loginScreen.classList.remove("hidden"); console.error("KYTRICV init error", error); }
+})();
+  </script>
+</body>
+</html>
