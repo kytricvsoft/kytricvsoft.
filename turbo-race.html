@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>KYTRICVSOFT — TURBO RACE</title>
+<style>
+:root{--cyan:#72f6ff;--gold:#ffd35a;--panel:#111a28}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#080d15;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;overflow:hidden;touch-action:none}
+#wrap{position:relative;width:100%;height:100%;min-height:440px;background:linear-gradient(#7ac9f3 0%,#e2f4e8 43%,#39734b 44%,#10291f 100%)}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hud{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:8px;justify-content:space-between;align-items:flex-start;pointer-events:none}
+.badge{background:#07101cdb;border:1px solid #ffffff35;border-radius:12px;padding:8px 11px;box-shadow:0 5px 18px #0004;font-weight:800;font-size:12px;letter-spacing:.5px}
+.badge span{display:block;color:var(--cyan);font-size:18px;line-height:1.2}
+.brand{position:absolute;top:86px;left:50%;transform:translateX(-50%);font-weight:1000;font-size:clamp(14px,3vw,22px);letter-spacing:3px;color:#fff;text-shadow:0 3px 4px #122}
+.controls{position:absolute;bottom:15px;left:0;right:0;display:flex;justify-content:space-between;align-items:end;padding:0 16px;gap:12px}
+.cluster{display:flex;gap:10px}
+.btn{width:clamp(58px,16vw,78px);height:clamp(58px,16vw,78px);border-radius:18px;border:2px solid #ffffff65;background:#07101ccc;color:#fff;font-weight:1000;font-size:23px;box-shadow:0 5px 0 #0007;touch-action:none;user-select:none;-webkit-user-select:none}
+.btn:active,.btn.active{transform:translateY(3px);box-shadow:0 2px 0 #0007;background:#1c5264}
+.btn.nitro{color:#1b1605;background:linear-gradient(#ffe98b,#ff9d28);font-size:13px;border-color:#fff0b0}
+.btn.brake{font-size:12px;color:#ffb5b5}
+.center{position:absolute;inset:0;display:grid;place-items:center;background:#03081380;backdrop-filter:blur(3px)}
+.card{width:min(90%,390px);background:linear-gradient(145deg,#142238f5,#07101bf5);border:1px solid #72f6ff75;border-radius:22px;padding:24px;text-align:center;box-shadow:0 20px 70px #0008}
+.logo{font-weight:1000;font-size:13px;letter-spacing:4px;color:var(--cyan)}
+h1{margin:7px 0 8px;font-size:clamp(30px,8vw,44px);line-height:1;font-style:italic}
+.card p{color:#c6d2df;font-size:14px;line-height:1.5}
+.start{border:0;border-radius:12px;background:linear-gradient(90deg,#73f5ff,#49b6ff);color:#07101c;font-weight:1000;letter-spacing:1px;padding:14px 25px;font-size:15px;width:100%;margin-top:8px}
+.small{font-size:11px!important;color:#90a3b7!important}
+.hidden{display:none}
+#toast{position:absolute;top:130px;left:50%;transform:translateX(-50%);background:#07101cdd;border:1px solid #ffffff40;border-radius:9px;padding:8px 13px;font-size:12px;font-weight:800;pointer-events:none}
+@media(min-width:700px){.controls{padding:0 6vw}.brand{top:82px}}
+</style>
+</head>
+<body>
+<div id="wrap">
+<canvas id="game"></canvas>
+<div class="hud">
+ <div class="badge">SPEED<span id="speed">0</span></div>
+ <div class="badge" style="text-align:center">LAP<span id="lap">1 / 3</span></div>
+ <div class="badge" style="text-align:right">TIME<span id="time">00:00</span></div>
+</div>
+<div class="brand">KYTRICVSOFT <span style="color:#ffe27b">/ TURBO RACE</span></div>
+<div id="toast" class="hidden">NITRO BOOST!</div>
+<div class="controls">
+ <div class="cluster"><button class="btn" data-key="left" aria-label="Belok kiri">◀</button><button class="btn" data-key="right" aria-label="Belok kanan">▶</button></div>
+ <div class="cluster"><button class="btn brake" data-key="brake">REM</button><button class="btn nitro" data-key="nitro">⚡<br>NITRO</button></div>
+</div>
+<div id="menu" class="center"><div class="card">
+<div class="logo">KYTRICVSOFT ORIGINAL</div><h1>TURBO<br><span style="color:#72f6ff">RACE</span></h1>
+<p>Gaspol di jalan pegunungan! Hindari mobil lalu lintas, kumpulkan jarak, dan selesaikan 3 lap.</p>
+<button class="start" id="start">MULAI BALAPAN ▶</button>
+<p class="small">Kontrol: ◀ ▶ untuk setir · REM untuk melambat · NITRO untuk boost.<br>Bisa dimainkan di HP dan komputer.</p>
+</div></div>
+<div id="finish" class="center hidden"><div class="card"><div class="logo">BALAPAN SELESAI</div><h1 id="finishTitle">FINISH!</h1><p id="result">Waktu: 00:00</p><button class="start" id="again">BALAP LAGI ↻</button></div></div>
+</div>
+<script>
+(()=> {
+const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+const $=id=>document.getElementById(id);
+let W=0,H=0,dpr=1,playing=false,last=0,elapsed=0,lap=1,speed=0,dist=0,carX=0,steer=0,nitro=100,traffic=[],spawn=0,shake=0;
+const keys={left:false,right:false,brake:false,nitro:false};
+function resize(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+addEventListener('resize',resize);resize();
+function roadAt(y,t){let p=y/H;let bend=Math.sin(t*.00045+p*3.3)*W*.12+Math.sin(t*.00022+p*6)*W*.035;return W*.5+bend}
+function roadWidth(y){return Math.max(125,Math.min(W*.72, W*(.25+.20*y/H)))}
+function rounded(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
+function drawCar(x,y,w,h,color,player=false){
+ ctx.save();ctx.translate(x,y);
+ // shadow
+ ctx.fillStyle='#0006';rounded(-w*.55,2,w*1.1,h,8);
+ ctx.fillStyle=color;rounded(-w/2,-h/2,w,h,player?9:7);
+ ctx.fillStyle=player?'#a9edff':'#bde7f7';rounded(-w*.34,-h*.28,w*.68,h*.25,4);
+ ctx.fillStyle='#152435';rounded(-w*.34,h*.04,w*.68,h*.22,3);
+ ctx.fillStyle='#171c25';rounded(-w*.57,-h*.28,w*.13,h*.27,3);rounded(w*.44,-h*.28,w*.13,h*.27,3);rounded(-w*.57,h*.22,w*.13,h*.27,3);rounded(w*.44,h*.22,w*.13,h*.27,3);
+ ctx.fillStyle=player?'#fff4ad':'#ffedbd';rounded(-w*.37,-h*.49,w*.22,4,2);rounded(w*.15,-h*.49,w*.22,4,2);
+ if(player){ctx.fillStyle='#161d28';rounded(-w*.6,-h*.43,w*1.2,5,2);ctx.fillStyle='#ffd85a';rounded(-w*.48,h*.31,w*.96,4,2)}
+ ctx.restore()
+}
+function draw(t){
+ ctx.clearRect(0,0,W,H);
+ // sky and hills
+ let sky=ctx.createLinearGradient(0,0,0,H*.5);sky.addColorStop(0,'#67bde9');sky.addColorStop(1,'#e5f3df');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H*.48);
+ ctx.fillStyle='#709b82';ctx.beginPath();ctx.moveTo(0,H*.43);
+ for(let x=0;x<=W+20;x+=20)ctx.lineTo(x,H*.32+Math.sin(x*.018+t*.0001)*H*.035+Math.sin(x*.041)*H*.018);
+ ctx.lineTo(W,H*.52);ctx.lineTo(0,H*.52);ctx.fill();
+ ctx.fillStyle='#426c4b';ctx.beginPath();ctx.moveTo(0,H*.46);
+ for(let x=0;x<=W+20;x+=20)ctx.lineTo(x,H*.38+Math.sin(x*.013+2)*H*.045+Math.sin(x*.032)*H*.02);
+ ctx.lineTo(W,H*.56);ctx.lineTo(0,H*.56);ctx.fill();
+ ctx.fillStyle='#24563a';ctx.fillRect(0,H*.45,W,H*.55);
+ // road trapezoid segments
+ let segments=44;
+ for(let i=segments;i>=0;i--){
+   let y1=H*.39+(H*.61)*(i/segments),y2=H*.39+(H*.61)*((i+1)/segments);
+   let phase=(dist*.012+i*.18)%1;
+   let c1=roadAt(y1,t),c2=roadAt(y2,t),rw1=roadWidth(y1),rw2=roadWidth(y2);
+   ctx.fillStyle=(Math.floor((i+dist*.03)/3)%2===0)?'#f5f4e8':'#cf4d45';
+   let curb1=rw1*.055,curb2=rw2*.055;
+   ctx.beginPath();ctx.moveTo(c1-rw1/2-curb1,y1);ctx.lineTo(c1+rw1/2+curb1,y1);ctx.lineTo(c2+rw2/2+curb2,y2);ctx.lineTo(c2-rw2/2-curb2,y2);ctx.closePath();ctx.fill();
+   ctx.fillStyle=(Math.floor((i+dist*.018)/4)%2===0)?'#41484e':'#383f45';
+   ctx.beginPath();ctx.moveTo(c1-rw1/2,y1);ctx.lineTo(c1+rw1/2,y1);ctx.lineTo(c2+rw2/2,y2);ctx.lineTo(c2-rw2/2,y2);ctx.closePath();ctx.fill();
+   if(Math.floor((i+dist*.025)/3)%2===0){ctx.strokeStyle='#f9f6df';ctx.lineWidth=Math.max(1,2.5*y2/H);ctx.setLineDash([14*y2/H,14*y2/H]);ctx.lineDashOffset=-dist*.35;ctx.beginPath();ctx.moveTo(c1,y1);ctx.lineTo(c2,y2);ctx.stroke();ctx.setLineDash([])}
+ }
+ // roadside trees
+ for(let i=0;i<13;i++){let y=H*.44+((i*97+dist*1.4)%(H*.58));let side=i%2?1:-1;let center=roadAt(y,t),rw=roadWidth(y);let x=center+side*(rw*.58+18+(i%3)*18)*y/H;
+ ctx.fillStyle='#17462f';ctx.beginPath();ctx.moveTo(x,y-24*y/H);ctx.lineTo(x-12*y/H,y+4*y/H);ctx.lineTo(x+12*y/H,y+4*y/H);ctx.fill();ctx.fillStyle='#80593b';ctx.fillRect(x-2*y/H,y+2*y/H,4*y/H,9*y/H)}
+ // traffic
+ for(const a of traffic){let y=a.y;let center=roadAt(y,t),rw=roadWidth(y);let x=center+a.lane*rw*.29;drawCar(x,y,Math.max(17,28*y/H),Math.max(32,48*y/H),a.color,false)}
+ // player
+ const py=H*.79,center=roadAt(py,t),rw=roadWidth(py),pw=Math.max(31,Math.min(48,W*.105)),ph=pw*1.65;
+ let px=center+carX*rw*.36;
+ if(shake>0){px+=(Math.random()-.5)*shake;shake*=.88}
+ drawCar(px,py,pw,ph,'#d92836',true);
+ // nitro visual
+ if(keys.nitro&&playing&&nitro>0){ctx.fillStyle='#63eaff';ctx.beginPath();ctx.moveTo(px-pw*.2,py+ph*.46);ctx.lineTo(px,py+ph*.46+18+Math.random()*15);ctx.lineTo(px+pw*.2,py+ph*.46);ctx.fill()}
+}
+function fmt(s){let m=Math.floor(s/60),ss=Math.floor(s%60);return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')}
+function update(dt){
+ if(!playing)return;
+ elapsed+=dt/1000;
+ let max=keys.nitro&&nitro>0?2.0:1.25;
+ if(keys.nitro&&nitro>0)nitro=Math.max(0,nitro-dt*.025);else nitro=Math.min(100,nitro+dt*.006);
+ if(keys.brake) speed=Math.max(.2,speed-dt*.0022);else speed=Math.min(max,speed+dt*.00045);
+ if(keys.left)steer-=dt*.0026;if(keys.right)steer+=dt*.0026;steer*=Math.pow(.94,dt/16);
+ carX=Math.max(-1.08,Math.min(1.08,carX+steer*dt*.0015));
+ dist+=speed*dt*.05;
+ spawn-=dt;if(spawn<=0){traffic.push({y:H*.43,lane:(Math.random()*1.6-.8),color:['#e4e7ec','#f0b82e','#3984d6','#2d3039'][Math.floor(Math.random()*4)]});spawn=850+Math.random()*800}
+ for(const a of traffic)a.y+=dt*(.12+speed*.38);
+ traffic=traffic.filter(a=>a.y<H+100);
+ let py=H*.79,px=roadAt(py,performance.now())+carX*roadWidth(py)*.36;
+ for(const a of traffic){if(Math.abs(a.y-py)<42&&Math.abs((roadAt(a.y,performance.now())+a.lane*roadWidth(a.y)*.29)-px)<28){speed=.25;shake=8;a.y=H+100}}
+ lap=Math.min(3,1+Math.floor(dist/6500));
+ $('speed').textContent=Math.round(speed*150);
+ $('lap').textContent=lap+' / 3';$('time').textContent=fmt(elapsed);
+ $('toast').classList.toggle('hidden',!(keys.nitro&&nitro>0));
+ if(dist>=19500){playing=false;$('finishTitle').textContent='FINISH!';$('result').textContent='Waktu: '+fmt(elapsed)+' · Kecepatan puncak dan skill setirmu sudah teruji.';$('finish').classList.remove('hidden')}
+}
+function frame(t){let dt=Math.min(40,t-(last||t));last=t;update(dt);draw(t);requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+function reset(){playing=true;elapsed=0;lap=1;speed=.35;dist=0;carX=0;steer=0;nitro=100;traffic=[];spawn=500;last=0;$('menu').classList.add('hidden');$('finish').classList.add('hidden')}
+$('start').addEventListener('click',reset);$('again').addEventListener('click',reset);
+document.querySelectorAll('[data-key]').forEach(b=>{
+ const k=b.dataset.key;
+ const down=e=>{e.preventDefault();keys[k]=true;b.classList.add('active')};
+ const up=e=>{e.preventDefault();keys[k]=false;b.classList.remove('active')};
+ b.addEventListener('pointerdown',down);b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);b.addEventListener('pointerleave',e=>{if(e.buttons===0)up(e)});
+});
+addEventListener('keydown',e=>{let map={ArrowLeft:'left',a:'left',ArrowRight:'right',d:'right',ArrowDown:'brake',' ':'brake',Shift:'nitro'};if(map[e.key]){keys[map[e.key]]=true;e.preventDefault()}});
+addEventListener('keyup',e=>{let map={ArrowLeft:'left',a:'left',ArrowRight:'right',d:'right',ArrowDown:'brake',' ':'brake',Shift:'nitro'};if(map[e.key])keys[map[e.key]]=false});
+})();
+</script>
+</body>
+</html>
